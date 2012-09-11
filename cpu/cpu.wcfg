@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="./isim.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="moxielite_package" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_textio" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="testbench" />
+            <top_module name="textio" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/testbench/moxielite/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/moxielite/pc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/moxielite/addrmode" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">addrmode</obj_property>
+      <obj_property name="ObjectShortName">addrmode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/moxielite/state_resolved" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">state_resolved</obj_property>
+      <obj_property name="ObjectShortName">state_resolved</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/moxielite/regfile" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regfile[0:15]</obj_property>
+      <obj_property name="ObjectShortName">regfile[0:15]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/testbench/moxielite/regfile[0]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[1]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">regfile[1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[2]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">regfile[2]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[3]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">regfile[3]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[4]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[4]</obj_property>
+         <obj_property name="ObjectShortName">regfile[4]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[5]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[5]</obj_property>
+         <obj_property name="ObjectShortName">regfile[5]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[6]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[6]</obj_property>
+         <obj_property name="ObjectShortName">regfile[6]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[7]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[7]</obj_property>
+         <obj_property name="ObjectShortName">regfile[7]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[8]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[8]</obj_property>
+         <obj_property name="ObjectShortName">regfile[8]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[9]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[9]</obj_property>
+         <obj_property name="ObjectShortName">regfile[9]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[10]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[10]</obj_property>
+         <obj_property name="ObjectShortName">regfile[10]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[11]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[11]</obj_property>
+         <obj_property name="ObjectShortName">regfile[11]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[12]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[12]</obj_property>
+         <obj_property name="ObjectShortName">regfile[12]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[13]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[13]</obj_property>
+         <obj_property name="ObjectShortName">regfile[13]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[14]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[14]</obj_property>
+         <obj_property name="ObjectShortName">regfile[14]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile[15]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[15]</obj_property>
+         <obj_property name="ObjectShortName">regfile[15]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group155" type="group">
+      <obj_property name="label">CPU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/moxielite/reset_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">reset_n</obj_property>
+         <obj_property name="ObjectShortName">reset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/clock" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clock</obj_property>
+         <obj_property name="ObjectShortName">clock</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/wait_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wait_n</obj_property>
+         <obj_property name="ObjectShortName">wait_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/addr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr[31:1]</obj_property>
+         <obj_property name="ObjectShortName">addr[31:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/din" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">din[15:0]</obj_property>
+         <obj_property name="ObjectShortName">din[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/dout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dout[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dout[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/rd_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rd_n</obj_property>
+         <obj_property name="ObjectShortName">rd_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/wr_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wr_n</obj_property>
+         <obj_property name="ObjectShortName">wr_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/wr_h_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wr_h_n</obj_property>
+         <obj_property name="ObjectShortName">wr_h_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/wr_l_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wr_l_n</obj_property>
+         <obj_property name="ObjectShortName">wr_l_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/pc" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/pc_plus_2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">pc_plus_2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_plus_2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/addr_internal" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr_internal[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_internal[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/addr_reg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/addr_reg_plus_cycle_bytes" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr_reg_plus_cycle_bytes[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_reg_plus_cycle_bytes[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/data_reg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/data_bswap" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_bswap[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_bswap[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/data_byte_index" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_byte_index[2:0]</obj_property>
+         <obj_property name="ObjectShortName">data_byte_index[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/data_byte_count" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_byte_count[2:0]</obj_property>
+         <obj_property name="ObjectShortName">data_byte_count[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/data_byte_index_plus_cycle_bytes" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_byte_index_plus_cycle_bytes[2:0]</obj_property>
+         <obj_property name="ObjectShortName">data_byte_index_plus_cycle_bytes[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/cycle_bytes" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cycle_bytes[1:0]</obj_property>
+         <obj_property name="ObjectShortName">cycle_bytes[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/regfile" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regfile[0:15]</obj_property>
+         <obj_property name="ObjectShortName">regfile[0:15]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/instruction" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">instruction[15:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/execute_state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">execute_state</obj_property>
+         <obj_property name="ObjectShortName">execute_state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/aluop" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">aluop</obj_property>
+         <obj_property name="ObjectShortName">aluop</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/condition" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">condition</obj_property>
+         <obj_property name="ObjectShortName">condition</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/addrmode" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">addrmode</obj_property>
+         <obj_property name="ObjectShortName">addrmode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/instruction_form" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">instruction_form</obj_property>
+         <obj_property name="ObjectShortName">instruction_form</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">state</obj_property>
+         <obj_property name="ObjectShortName">state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/state_next" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">state_next</obj_property>
+         <obj_property name="ObjectShortName">state_next</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/state_resolved" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">state_resolved</obj_property>
+         <obj_property name="ObjectShortName">state_resolved</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/has_imm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">has_imm</obj_property>
+         <obj_property name="ObjectShortName">has_imm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/have_imm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">have_imm</obj_property>
+         <obj_property name="ObjectShortName">have_imm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/have_deref" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">have_deref</obj_property>
+         <obj_property name="ObjectShortName">have_deref</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/imm_reg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">imm_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">imm_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/reg_a" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">reg_a[3:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_a[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/reg_b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">reg_b[3:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_b[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/reg_a_value" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">reg_a_value[31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_a_value[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/reg_b_value" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">reg_b_value[31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_b_value[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/ptr_base" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ptr_base[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ptr_base[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/ptr_offset" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ptr_offset[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ptr_offset[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/ptr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ptr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ptr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/ptr_size" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ptr_size[2:0]</obj_property>
+         <obj_property name="ObjectShortName">ptr_size[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/deref_ptr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">deref_ptr</obj_property>
+         <obj_property name="ObjectShortName">deref_ptr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/operand_a" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">operand_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">operand_a[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/operand_b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">operand_b[31:0]</obj_property>
+         <obj_property name="ObjectShortName">operand_b[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/alu_result" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alu_result[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_result[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/alu_zflag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">alu_zflag</obj_property>
+         <obj_property name="ObjectShortName">alu_zflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/alu_cflag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">alu_cflag</obj_property>
+         <obj_property name="ObjectShortName">alu_cflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/alu_oflag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">alu_oflag</obj_property>
+         <obj_property name="ObjectShortName">alu_oflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/alu_sflag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">alu_sflag</obj_property>
+         <obj_property name="ObjectShortName">alu_sflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/zflag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">zflag</obj_property>
+         <obj_property name="ObjectShortName">zflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/cflag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cflag</obj_property>
+         <obj_property name="ObjectShortName">cflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/oflag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">oflag</obj_property>
+         <obj_property name="ObjectShortName">oflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/sflag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sflag</obj_property>
+         <obj_property name="ObjectShortName">sflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/lflag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lflag</obj_property>
+         <obj_property name="ObjectShortName">lflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/conditionmatch" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">conditionmatch</obj_property>
+         <obj_property name="ObjectShortName">conditionmatch</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group63" type="group">
+      <obj_property name="label">Bus</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/moxielite/addr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr[31:1]</obj_property>
+         <obj_property name="ObjectShortName">addr[31:1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/din" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">din[15:0]</obj_property>
+         <obj_property name="ObjectShortName">din[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/dout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dout[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dout[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/rd_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rd_n</obj_property>
+         <obj_property name="ObjectShortName">rd_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/wr_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wr_n</obj_property>
+         <obj_property name="ObjectShortName">wr_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/wr_h_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wr_h_n</obj_property>
+         <obj_property name="ObjectShortName">wr_h_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/wr_l_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wr_l_n</obj_property>
+         <obj_property name="ObjectShortName">wr_l_n</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group65" type="group">
+      <obj_property name="label">Instruction</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/moxielite/state_resolved" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">state_resolved</obj_property>
+         <obj_property name="ObjectShortName">state_resolved</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/execute_state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">execute_state</obj_property>
+         <obj_property name="ObjectShortName">execute_state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/instruction" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">instruction[15:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/addrmode" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">addrmode</obj_property>
+         <obj_property name="ObjectShortName">addrmode</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group72" type="group">
+      <obj_property name="label">ALU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/moxielite/aluop" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">aluop</obj_property>
+         <obj_property name="ObjectShortName">aluop</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/operand_a" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">operand_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">operand_a[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/operand_b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">operand_b[31:0]</obj_property>
+         <obj_property name="ObjectShortName">operand_b[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/alu_result" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alu_result[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_result[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group95" type="group">
+      <obj_property name="label">Decoder</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/moxielite/moxielite_decode/instruction" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">instruction[15:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_decode/executestate" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">executestate</obj_property>
+         <obj_property name="ObjectShortName">executestate</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_decode/condition" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">condition</obj_property>
+         <obj_property name="ObjectShortName">condition</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_decode/addrmode" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">addrmode</obj_property>
+         <obj_property name="ObjectShortName">addrmode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_decode/aluop" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">aluop</obj_property>
+         <obj_property name="ObjectShortName">aluop</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_decode/instructionform" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">instructionform</obj_property>
+         <obj_property name="ObjectShortName">instructionform</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_decode/ptrsize" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ptrsize[2:0]</obj_property>
+         <obj_property name="ObjectShortName">ptrsize[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group115" type="group">
+      <obj_property name="label">lshifter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu/moxielite_lshift/val" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">val[31:0]</obj_property>
+         <obj_property name="ObjectShortName">val[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu/moxielite_lshift/amt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">amt[4:0]</obj_property>
+         <obj_property name="ObjectShortName">amt[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu/moxielite_lshift/result" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">result[32:0]</obj_property>
+         <obj_property name="ObjectShortName">result[32:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu/moxielite_lshift/shift1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">shift1[32:0]</obj_property>
+         <obj_property name="ObjectShortName">shift1[32:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu/moxielite_lshift/shift2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">shift2[32:0]</obj_property>
+         <obj_property name="ObjectShortName">shift2[32:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu/moxielite_lshift/shift3" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">shift3[32:0]</obj_property>
+         <obj_property name="ObjectShortName">shift3[32:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu/moxielite_lshift/shift4" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">shift4[32:0]</obj_property>
+         <obj_property name="ObjectShortName">shift4[32:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group144" type="group">
+      <obj_property name="label">Divider</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/clock" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clock</obj_property>
+         <obj_property name="ObjectShortName">clock</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/reset" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/load" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">load</obj_property>
+         <obj_property name="ObjectShortName">load</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/ready" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ready</obj_property>
+         <obj_property name="ObjectShortName">ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/numerator" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">numerator[31:0]</obj_property>
+         <obj_property name="ObjectShortName">numerator[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/denominator" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">denominator[31:0]</obj_property>
+         <obj_property name="ObjectShortName">denominator[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/quotient" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">quotient[31:0]</obj_property>
+         <obj_property name="ObjectShortName">quotient[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/remainder" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">remainder[31:0]</obj_property>
+         <obj_property name="ObjectShortName">remainder[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/buf" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">buf[63:0]</obj_property>
+         <obj_property name="ObjectShortName">buf[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/dbuf" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dbuf[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dbuf[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/sm" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">sm</obj_property>
+         <obj_property name="ObjectShortName">sm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/moxielite/moxielite_alu2/moxielite_divider/size" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">size</obj_property>
+         <obj_property name="ObjectShortName">size</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

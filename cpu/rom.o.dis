@@ -1,0 +1,9 @@
+
+rom.o:     file format elf32-moxie
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	2e 22       	xor	$r0, $r0
+   2:	04 00       	ret

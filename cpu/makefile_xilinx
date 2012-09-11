@@ -1,0 +1,127 @@
+
+!IFNDEF STARTUPCLK
+STARTUPCLK = CCLK
+!ENDIF
+
+!IFNDEF TOPMODULE
+TOPMODULE		= $(PROJNAME)
+!ENDIF
+
+!IFNDEF LANGUAGE
+LANGUAGE		= vhdl
+!ENDIF
+
+!IFNDEF UCFFILE
+UCFFILE         = $(PROJNAME).ucf
+!ENDIF
+
+!IFNDEF INTSTYLE
+INTSTYLE        = ise
+!ENDIF
+
+!IFNDEF XST_FLAGS
+XST_FLAGS		= -intstyle $(INTSTYLE)
+!ENDIF
+
+!IFNDEF NGDBUILD_FLAGS
+NGDBUILD_FLAGS  = -intstyle $(INTSTYLE)
+!ENDIF
+
+!IFNDEF MAP_FLAGS
+MAP_FLAGS       = -intstyle $(INTSTYLE) -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off
+!ENDIF
+
+!IFNDEF PAR_FLAGS
+PAR_FLAGS       = -intstyle $(INTSTYLE) -w -ol high -mt off
+!ENDIF
+
+!IFNDEF BITGEN_FLAGS
+BITGEN_FLAGS    = -intstyle $(INTSTYLE) -w -g StartupClk:$(STARTUPCLK) -g CRC:Enable
+!ENDIF
+
+!IFNDEF XILINX
+XILINX		    = C:\Xilinx\14.1\ISE_DS\ISE
+!ENDIF
+
+!IFNDEF XILINXBIN
+XILINXBIN		= $(XILINX)\bin\nt64
+!ENDIF
+
+!IFNDEF SIM_TIME
+SIM_TIME		= 1000 ns
+!ENDIF
+
+PATH=$(PATH);$(XILINXBIN)
+
+$(INTDIR)\$(PROJNAME).ngc: $(HDL_FILES) $(INTDIR)\$(PROJNAME).xst $(INTDIR)\$(PROJNAME).prj
+	xst $(XST_FLAGS) -ifn $(INTDIR)\$(PROJNAME).xst -ofn $(INTDIR)\$(PROJNAME).syr
+	@del $(PROJNAME).lso
+
+$(INTDIR)\$(PROJNAME).ngd: $(INTDIR)\$(PROJNAME).ngc $(UCFFILE)
+	ngdbuild $(NGDBUILD_FLAGS) -uc $(UCFFILE) -dd $(INTDIR) -sd ipcore_dir -p $(DEVICE) $(INTDIR)\$(PROJNAME).ngc $(INTDIR)\$(PROJNAME).ngd
+
+$(INTDIR)\$(PROJNAME)_map.ncd: $(INTDIR)\$(PROJNAME).ngd $(UCFFILE)
+	@cd $(INTDIR)
+	map $(MAP_FLAGS) -p $(DEVICE) -o $(PROJNAME)_map.ncd $(PROJNAME).ngd $(PROJNAME).pcf
+	@cd ..
+
+$(INTDIR)\$(PROJNAME).ncd: $(INTDIR)\$(PROJNAME)_map.ncd $(INTDIR)\$(PROJNAME).pcf
+	@cd $(INTDIR)
+	par $(PAR_FLAGS) $(PROJNAME)_map.ncd $(PROJNAME).ncd $(PROJNAME).pcf
+	@cd ..
+
+$(INTDIR)\$(PROJNAME).bit: $(INTDIR)\$(PROJNAME).ncd $(INTDIR)\$(PROJNAME).pcf
+	bitgen $(BITGEN_FLAGS)  $(INTDIR)\$(PROJNAME).ncd $(INTDIR)\$(PROJNAME).bit $(INTDIR)\$(PROJNAME).pcf
+	@del xilinx_device_details.xml
+
+$(INTDIR)\$(PROJNAME).xst: makefile
+	@echo set -tmpdir $(INTDIR) 			> $(INTDIR)\$(PROJNAME).xst
+	@echo set -xsthdpdir "xst" 				>> $(INTDIR)\$(PROJNAME).xst
+	@echo run 								>> $(INTDIR)\$(PROJNAME).xst
+	@echo -ifn "$(INTDIR)\$(PROJNAME).prj" 	>> $(INTDIR)\$(PROJNAME).xst
+	@echo -ifmt $(LANGUAGE) 				>> $(INTDIR)\$(PROJNAME).xst
+	@echo -ofn "$(INTDIR)\$(PROJNAME)" 		>> $(INTDIR)\$(PROJNAME).xst
+	@echo -ofmt NGC 						>> $(INTDIR)\$(PROJNAME).xst
+	@echo -top $(TOPMODULE) 				>> $(INTDIR)\$(PROJNAME).xst
+	@echo -p $(DEVICE) 						>> $(INTDIR)\$(PROJNAME).xst
+	@echo -opt_mode Speed 					>> $(INTDIR)\$(PROJNAME).xst
+	@echo -opt_level 1 						>> $(INTDIR)\$(PROJNAME).xst
+
+$(INTDIR)\$(PROJNAME).prj: makefile
+	makefile_utils makeprj $(INTDIR)\$(PROJNAME).prj na $(HDL_FILES)
+
+$(SIM_TOP)_sim.prj: makefile
+
+$(SIM_TOP)_sim.exe: $(SIM_HDL_FILES) makefile
+	makefile_utils makeprj $(SIM_TOP)_sim.prj $(LANGUAGE) $(SIM_HDL_FILES)
+	fuse -prj $(SIM_TOP)_sim.prj $(SIM_TOP) -o $(SIM_TOP)_sim.exe
+
+run: $(SIM_TOP)_sim.exe $(SIM_OTHER_DEPS)
+	@echo onerror {resume} 		> $(INTDIR)\$(SIM_TOP)_isim.cmd
+	@echo wcfg open cpu.wcfg				>> $(INTDIR)\$(SIM_TOP)_isim.cmd
+	@echo run $(SIM_TIME)        >> $(INTDIR)\$(SIM_TOP)_isim.cmd
+	set XILINX=$(XILINX)
+	$(SIM_TOP)_sim.exe -gui -tclbatch $(INTDIR)\$(SIM_TOP)_isim.cmd 
+
+ipcore_dir:
+	mkdir ipcore_dir
+
+ipcore_dir\coregen.cgp: ipcore_dir
+	@echo Generating New Core Generator Project 
+	@echo   - BE SURE TO UPDATE PROJECT PROPERTIES TO MATCH YOUR DEVICE
+	@echo SET busformat = BusFormatAngleBracketNotRipped > ipcore_dir\coregen.cgp
+	@echo SET designentry = VHDL 						>> ipcore_dir\coregen.cgp
+	@echo SET device = xc6slx16 							>> ipcore_dir\coregen.cgp
+	@echo SET devicefamily = spartan6 					>> ipcore_dir\coregen.cgp
+	@echo SET flowvendor = Other 						>> ipcore_dir\coregen.cgp
+	@echo SET package = csg324							>> ipcore_dir\coregen.cgp
+	@echo SET speedgrade = -2							>> ipcore_dir\coregen.cgp
+	@echo SET verilogsim = false							>> ipcore_dir\coregen.cgp
+	@echo SET vhdlsim = true								>> ipcore_dir\coregen.cgp
+
+
+coregen: ipcore_dir\coregen.cgp
+	coregen -p .\ipcore_dir\coregen.cgp
+
+xnuke:
+	makefile_utils xnuke	
