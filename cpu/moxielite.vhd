@@ -132,12 +132,8 @@ BEGIN
  			when state_error =>
  				addr_internal <= PC;
 
- 			when state_fetch_memcycle | state_fetch_wait | state_read_imm_setup =>
+ 			when state_fetch_memcycle | state_fetch_wait =>
  				addr_internal <= PC;
- 				rd_n <= '0';
-
- 			when state_deref_ptr_setup =>
- 				addr_internal <= ptr;
  				rd_n <= '0';
 
 			when state_load_memcycle | state_load_wait =>
@@ -604,7 +600,7 @@ BEGIN
 					data_byte_index <= "000";
 					data_byte_count <= "100";
 					state_next <= state_latch_imm;
-					state <= state_load_wait;
+					state <= state_load_memcycle;
 
  				when state_latch_imm =>
 
@@ -624,7 +620,7 @@ BEGIN
 					data_byte_index <= "000";
 					data_byte_count <= ptr_size;
 					state_next <= state_latch_deref;
-					state <= state_load_wait;
+					state <= state_load_memcycle;
 
  				when state_latch_deref =>
 
