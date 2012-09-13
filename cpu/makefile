@@ -17,11 +17,11 @@ HDL_FILES		= \
 	$(MOXIELITE_FILES)
 
 MOXIELITE_FILES = \
-	moxielite_package.vhd \
 	moxielite.vhd \
+	moxielite_package.vhd \
+ 	moxielite_decode.vhd \
 	moxielite_alu.vhd \
 	moxielite_alu2.vhd \
- 	moxielite_decode.vhd \
 	moxielite_lshift.vhd \
 	moxielite_rshift.vhd \
 	moxielite_multiplier.vhd \
@@ -33,9 +33,21 @@ SIM_TOP         = TestBench
 SIM_TIME		= 000 ns
 SIM_OTHER_DEPS	= rom.hex
 
+GHDL_OPTS=-fexplicit --ieee=synopsys
+
+
 all: $(INTDIR)\$(PROJNAME).bit
 
 buildsim: $(SIM_TOP)_sim.exe
+
+ghdl: work-obj93.cf rom.hex
+
+ghdl-run: ghdl
+	ghdl -r $(GHDL_OPTS) TestBench
+
+work-obj93.cf: TestBench.vhd sim_ram.vhd $(MOXIELITE_FILES)
+	ghdl -i $(GHDL_OPTS) TestBench.vhd sim_ram.vhd $(MOXIELITE_FILES) 
+	ghdl -m $(GHDL_OPTS) TestBench
 
 rom.hex : rom.s
 	$(AS) $(ASOPTS) rom.s -o rom.o

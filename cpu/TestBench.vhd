@@ -3,6 +3,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 USE work.moxielite_package.ALL;
+use std.textio.all; --  Imports the standard textio package.
  
 ENTITY TestBench IS
 END TestBench;
@@ -22,6 +23,8 @@ ARCHITECTURE behavior OF TestBench IS
 	signal cpu_wr_n : std_logic;
 	signal cpu_wr_h_n : std_logic;
 	signal cpu_wr_l_n : std_logic;
+	signal cpu_wr_h : std_logic;
+	signal cpu_wr_l : std_logic;
 
 	signal mem_rd : std_logic;
 	signal mem_wr : std_logic;
@@ -62,6 +65,8 @@ BEGIN
 		x"0000";
 
 	-- 4k RAM
+	cpu_wr_h <= NOT cpu_wr_h_n;
+	cpu_wr_l <= NOT cpu_wr_l_n;
 	sim_ram : entity work.sim_ram
 		GENERIC MAP
 		(
@@ -75,8 +80,8 @@ BEGIN
 			din => cpu_dout,
 			dout => ram_dout,
 			wr => ram_wr,
-			wr_h => NOT cpu_wr_h_n,
-			wr_l => NOT cpu_wr_l_n
+			wr_h => cpu_wr_h,
+			wr_l => cpu_wr_l
 		);
 
 	-- RAM decode
@@ -117,9 +122,13 @@ BEGIN
 
 	-- Stimulus process
 	stim_proc: process
+     variable l : line;
 	begin		
+	     write (l, String'("Reset"));
+	     writeline (output, l);
+
 		reset_n <= '0';
-		wait for 100ns;
+		wait for 100 ns;
 		reset_n <= '1';
 
 		wait;

@@ -565,6 +565,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"read_imm",
+			"state_read_imm_setup",
 			"nop",
 			"regfile",
 			"jsr",
@@ -690,9 +692,7 @@
 			"<= ;",
 			"din",
 			"data_reg",
-			"ugh",
-			"data_reg",
-			"endian"
+			"ugh"
 		],
 		"highlight": true,
 		"in_selection": false,

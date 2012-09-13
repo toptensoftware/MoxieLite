@@ -3,6 +3,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 USE work.moxielite_package.ALL;
+use std.textio.all; --  Imports the standard textio package.
 
  
 ENTITY moxielite IS
@@ -124,8 +125,8 @@ BEGIN
 		wr_n <= '1';
 		wr_l_n <= '0';
 		wr_h_n <= '0';
-		addr_internal <= (others=>'X');
-		dout <= (others=>'X');
+		addr_internal <= (others=>'0');
+		dout <= (others=>'0');
 
  		case state_resolved is
 
@@ -274,7 +275,7 @@ BEGIN
 				reg_A <= instruction(11 downto 8);
 
 			when others =>
-				reg_A <= (others=>'X');
+				reg_A <= (others=>'0');
 
 		end case;
 
@@ -290,7 +291,7 @@ BEGIN
 				reg_B <= instruction(3 downto 0);
 
 			when others =>
-				reg_B <= (others=>'X');
+				reg_B <= (others=>'0');
 
 		end case;
 
@@ -327,7 +328,7 @@ BEGIN
 				operand_A <= (31 downto 11 => instruction(9)) & instruction(9 downto 0) & "0";
 
 			when others =>
-				operand_A <= (others=>'X');
+				operand_A <= (others=>'0');
 
 		end case;
 
@@ -357,7 +358,7 @@ BEGIN
 				operand_B <= x"00000004";
 
 			when others =>
-				operand_B <= (others=>'X');
+				operand_B <= (others=>'0');
 
 		end case;
 	end process operand_B_decoder;
@@ -366,7 +367,7 @@ BEGIN
 	ptr_base_decoder : process(addrmode, imm_reg, reg_A_value, reg_B_value)
 	begin
 
-		ptr_base <= (others => 'X');
+		ptr_base <= (others => '0');
 		deref_ptr <= '0';
 
 		case addrmode is
@@ -555,12 +556,27 @@ BEGIN
 
  	-- Main CPU State Machine
  	cpufsm : process(reset_n, clock)
+     variable l : line;
  	begin
 
  		if reset_n='0' then
 
  			PC <= BOOT_ADDRESS;
  			state <= state_fetch_pre;
+ 			addr_reg <= (others => '0');
+ 			data_reg <= (others => '0');
+ 			data_byte_index <= (others => '0');
+ 			data_byte_count <= (others => '0');
+ 			regfile <= (others => (others=>'0'));
+ 			instruction <= (others => '0');
+ 			have_imm <= '0';
+ 			have_deref <= '0';
+ 			imm_reg <= (others => '0');
+ 			ZFlag <= '0';
+ 			CFlag <= '0';
+ 			OFlag <= '0';
+ 			SFlag <= '0';
+
  			
  		elsif rising_edge(clock) then
 
@@ -892,10 +908,14 @@ BEGIN
 
  				when state_error =>
  				
+				     write (l, String'("BAD"));
+				     writeline (output, l);
  					-- stay in error state
  					Null;
 
  				when state_execute_brk =>
+				     write (l, String'("BRK"));
+				     writeline (output, l);
  					null;
 
  				when others =>

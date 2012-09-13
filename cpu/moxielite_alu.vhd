@@ -129,7 +129,7 @@ BEGIN
 				R_int <= C & A(31 downto 1);
 
 			when others =>
-				R_int <= (others=>'X');
+				R_int <= (others=>'0');
 		end case;
 	end process;
 

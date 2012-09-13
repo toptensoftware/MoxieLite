@@ -36,296 +36,296 @@ BEGIN
 			-- Form 1
 			InstructionForm <= form_1;
 			Condition <= condition_eq;
-			case "0" & Instruction(14 downto 8) is
-				when x"00" => 
+			case Instruction(14 downto 8) is
+				when "0000000" => 
 					-- bad
 					AddrMode <= addrmode_narg; 		
 					ExecuteState <= state_execute_bad;
 
-				when x"01" => 
+				when "0000001" => 
 					-- ldi.l
 					AddrMode <= addrmode_a_imm;   	
 					ExecuteState <= state_execute_alu; 		
 					AluOp <= aluop_mov;
 
-				when x"02" => 
+				when "0000010" => 
 					-- mov
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_mov;
 
-				when x"03" => 
+				when "0000011" => 
 					-- jsra
 					AddrMode <= addrmode_imm;    		
 					ExecuteState <= state_execute_jsr;
 
-				when x"04" => 
+				when "0000100" => 
 					-- ret
 					AddrMode <= addrmode_narg; 		
 					ExecuteState <= state_execute_ret;
 
-				when x"05" => 
+				when "0000101" => 
 					-- add.l
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_add;
 
-				when x"06" => 
+				when "0000110" => 
 					-- push
 					AddrMode <= addrmode_a_lit4;   		
 					AluOp <= aluop_sub;
 					ExecuteState <= state_execute_push;
 
-				when x"07" => 
+				when "0000111" => 
 					-- pop
 					AddrMode <= addrmode_a_lit4;   		
 					AluOp <= aluop_add;
 					ExecuteState <= state_execute_pop;
 
-				when x"08" => 
+				when "0001000" => 
 					-- lda.l
 					AddrMode <= addrmode_a_immptr;  	
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_mov;  
 					PtrSize <= "100";
 
-				when x"09" => 
+				when "0001001" => 
 					-- sta_l;
 					AddrMode <= addrmode_immptr_a;  	
 					ExecuteState <= state_execute_store;  						 
 					PtrSize <= "100"; 
 
-				when x"0a" => 
+				when "0001010" => 
 					-- ld.l;
 					AddrMode <= addrmode_a_bptr;  	
 					ExecuteState <= state_execute_alu; 		
 					AluOp <= aluop_mov;  
 					PtrSize <= "100"; 
 
-				when x"0b" => 
+				when "0001011" => 
 					-- st.l
 					AddrMode <= addrmode_aptr_b;  	
 					ExecuteState <= state_execute_store;						 
 					PtrSize <= "100";
 
-				when x"0c" => 
+				when "0001100" => 
 					-- ldo.l
 					AddrMode <= addrmode_a_bptro; 	
 					ExecuteState <= state_execute_alu;      
 					AluOp <= aluop_mov;  
 					PtrSize <= "100"; 
 
-				when x"0d" => 
+				when "0001101" => 
 					-- sto.l
 					AddrMode <= addrmode_aptro_b; 	
 					ExecuteState <= state_execute_store;						 
 					PtrSize <= "100";
 
-				when x"0e" => 
+				when "0001110" => 
 					-- sub.l
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_cmp;		
 					AluOp <= aluop_sub;
 
-				when x"0f" => 
+				when "0001111" => 
 					-- nop
 					AddrMode <= addrmode_narg; 		
 					ExecuteState <= state_execute_nop;
 
-				when x"19" => 
+				when "0011001" => 
 					-- jsr
 					AddrMode <= addrmode_ab;    		
 					ExecuteState <= state_execute_jsr;
 
-				when x"1a" => 
+				when "0011010" => 
 					-- jmp
 					AddrMode <= addrmode_imm;    		
 					ExecuteState <= state_execute_jmp;
 
-				when x"1b" => 
+				when "0011011" => 
 					-- ldi.b
 					AddrMode <= addrmode_a_imm;   	
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_mov;
 
-				when x"1c" => 
+				when "0011100" => 
 					-- ld.b
 					AddrMode <= addrmode_a_bptr; 		
 					ExecuteState <= state_execute_alu;      
 					AluOp <= aluop_mov; 
 					PtrSize <= "001";
 
-				when x"1d" => 
+				when "0011101" => 
 					-- lda.b
 					AddrMode <= addrmode_a_immptr;    
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_mov; 
 					PtrSize <= "001";
 
-				when x"1e" => 
+				when "0011110" => 
 					-- st.b
 					AddrMode <= addrmode_aptr_b;      
 					ExecuteState <= state_execute_store;                        
 					PtrSize <= "001";
 
-				when x"1f" => 
+				when "0011111" => 
 					-- sta.b
 					AddrMode <= addrmode_immptr_a;    
 					ExecuteState <= state_execute_store;	                    
 					PtrSize <= "001";
 
-				when x"20" => 
+				when "0100000" => 
 					-- ldi.s
 					AddrMode <= addrmode_a_imm;   	
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_mov;
 
-				when x"21" => 
+				when "0100001" => 
 					-- ld.s
 					AddrMode <= addrmode_a_bptr;      
 					ExecuteState <= state_execute_alu;      
 					AluOp <= aluop_mov; 
 					PtrSize <= "010"; 
 
-				when x"22" => 
+				when "0100010" => 
 					-- lda.s
 					AddrMode <= addrmode_a_immptr;    
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_mov; 
 					PtrSize <= "010"; 
 
-				when x"23" => 
+				when "0100011" => 
 					-- st.s
 					AddrMode <= addrmode_aptr_b;      
 					ExecuteState <= state_execute_store;                        
 					PtrSize <= "010"; 
 
-				when x"24" => 
+				when "0100100" => 
 				 	-- sta.s
 					AddrMode <= addrmode_immptr_a;    
 					ExecuteState <= state_execute_store; 	                    
 					PtrSize <= "010";
 
-				when x"25" => 
+				when "0100101" => 
 					-- jmp
 					AddrMode <= addrmode_ab;    		
 					ExecuteState <= state_execute_jmp;
 
-				when x"26" => 
+				when "0100110" => 
 					-- and
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_and;
 
-				when x"27" => 
+				when "0100111" => 
 					-- lshr
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_shr;
 
-				when x"28" => 
+				when "0101000" => 
 					-- ashl
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_shl;
 
-				when x"29" => 
+				when "0101001" => 
 					-- sub.l
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_sub;
 
-				when x"2a" => 
+				when "0101010" => 
 					-- neg
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_neg;
 
-				when x"2b" => 
+				when "0101011" => 
 					-- or
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_or;
 
-				when x"2c" => 
+				when "0101100" => 
 					-- not
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_not;
 
-				when x"2d" => 
+				when "0101101" => 
 					-- ashr
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_sar;
 
-				when x"2e" =>
+				when "0101110" =>
 					-- xor
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_xor;
 
-				when x"2f" => 
+				when "0101111" => 
 					-- mul
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu2;		
 					AluOp <= aluop_mul;
 
-				when x"30" => 
+				when "0110000" => 
 					-- swi
 					AddrMode <= addrmode_imm;    		
 					ExecuteState <= state_execute_swi;
 
-				when x"31" => 
+				when "0110001" => 
 					-- div.l
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu2;		
 					AluOp <= aluop_div;
 
-				when x"32" => 
+				when "0110010" => 
 					-- udiv.l
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu2;		
 					AluOp <= aluop_udiv;
 
-				when x"33" => 
+				when "0110011" => 
 					-- mod.l
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu2;		
 					AluOp <= aluop_mod;
 
-				when x"34" => 
+				when "0110100" => 
 					-- umod.l
 					AddrMode <= addrmode_ab;   		
 					ExecuteState <= state_execute_alu2;		
 					AluOp <= aluop_umod;
 
-				when x"35" => 
+				when "0110101" => 
 					-- brk
 					AddrMode <= addrmode_narg; 		
 					ExecuteState <= state_execute_brk;
 
-				when x"36" => 
+				when "0110110" => 
 					-- ldo.b
 					AddrMode <= addrmode_a_bptro;     
 					ExecuteState <= state_execute_alu;		
 					AluOp <= aluop_mov; 
 					PtrSize <= "001";
 
-				when x"37" => 	
+				when "0110111" => 	
 					-- sto.b
 					AddrMode <= addrmode_aptro_b; 	
 					ExecuteState <= state_execute_store;                       
 					PtrSize <= "001";
 
-				when x"38" => 
+				when "0111000" => 
 					-- ldo.s
 					AddrMode <= addrmode_a_bptro; 	
 					ExecuteState <= state_execute_alu;      
 					AluOp <= aluop_mov; 
 					PtrSize <= "010";
 
-				when x"39" => 
+				when "0111001" => 
 					-- sto.s
 					AddrMode <= addrmode_aptro_b; 	
 					ExecuteState <= state_execute_store;                        

@@ -35,7 +35,7 @@ architecture behavior of sim_ram is
 		variable RAM : mem_type;
 	begin
 		if INIT_FILE/="" then
-			file_open(InitFile, RamFileName);
+			file_open(InitFile, RamFileName, read_mode);
 			for I in mem_type'range loop
 				readline(InitFile, InitFileLine);
 				hread(InitFileLine, RAM(I));
