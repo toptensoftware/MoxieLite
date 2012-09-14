@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"cpu",
+				"cpu_wr_h_n"
+			],
+			[
 				"divider_",
 				"divider_remainder"
 			],
@@ -417,13 +421,21 @@
 	},
 	"file_history":
 	[
+		"/C/Users/bradr/dev/fpga/moxie/cpu/rom.elf.dis",
+		"/C/Users/bradr/dev/fpga/moxie/cpu/rom.s",
+		"/C/Users/bradr/dev/fpga/moxie/cpu/moxielite_alu.vhd",
+		"/C/Users/bradr/dev/fpga/moxie/cpu/moxielite.vhd",
+		"/C/Users/bradr/dev/fpga/moxie/cpu/sim_ram.vhd",
+		"/C/Users/bradr/dev/fpga/moxie/cpu/TestBench.vhd",
+		"/C/Users/bradr/dev/fpga/moxie/cpu/makefile",
+		"/C/Users/bradr/dev/fpga/moxie/cpu/moxielite_rshift.vhd",
+		"/C/Users/bradr/dev/fpga/moxie/cpu/work-obj93.cf",
+		"/C/Users/bradr/dev/fpga/moxie/cpu/moxielite_decode.vhd",
 		"/C/Users/bradr/dev/fpga/moxie/.gitignore",
 		"/C/Users/bradr/dev/fpga/moxie/cpu/moxielite_divider.vhd",
 		"/C/Users/bradr/dev/fpga/moxie/cpu/moxielite_alu2.vhd",
 		"/C/Users/bradr/dev/fpga/moxie/cpu/moxielite_divider_x.vhd",
-		"/C/Users/bradr/dev/fpga/moxie/cpu/rom.s",
 		"/C/Users/bradr/dev/fpga/moxie/cpu/moxielite_package.vhd",
-		"/C/Users/bradr/dev/fpga/moxie/cpu/rom.elf.dis",
 		"/C/b/dev/fpga/moxie/soc/PeripheralController.vhd",
 		"/C/b/dev/fpga/moxie/soc/MoxieLiteSoc.vhd",
 		"/C/b/dev/fpga/moxie/cpu/moxielite_package.vhd",
@@ -536,15 +548,7 @@
 		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/VHDL/VhdlUtils.sublime-commands",
 		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/VHDL/vh.py",
 		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/Default/Default.sublime-commands",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/SDCardControllerTest.vhd",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/SDCardController.vhd",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Crtc6545.vhd",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/makefile",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/makefile_xilinx",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/makefile_utils.bat",
-		"/C/Users/bradr/dev/fpga/Nexys3/SDCardControllerTest.vhd",
-		"/C/Users/bradr/AppData/Local/Temp/Rar$DR02.849/syntax_check.scr",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86bench.sublime-workspace"
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/SDCardControllerTest.vhd"
 	],
 	"find":
 	{
@@ -565,6 +569,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"brk",
+			"BIG_END",
+			"mem_1",
+			"endian",
+			"instruction <=",
+			"bswap",
+			"reset",
+			"R <=",
+			"SFlag <=",
 			"read_imm",
 			"state_read_imm_setup",
 			"nop",
@@ -683,16 +696,7 @@
 			"sta_",
 			"execute_store",
 			"ldi_l",
-			"state_deref_ptr_setup",
-			"resolve",
-			"ptr",
-			"a4",
-			"data_reg",
-			" <= ;",
-			"<= ;",
-			"din",
-			"data_reg",
-			"ugh"
+			"state_deref_ptr_setup"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -827,7 +831,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 185.0
+		"height": 285.0
 	},
 	"output.hex_viewer_inspector":
 	{
@@ -843,6 +847,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"sim",
+				"sim_ram.vhd"
+			],
+			[
+				"sim_ram",
+				"sim_ram.vhd"
+			],
 			[
 				"alu2",
 				"moxielite_alu2.vhd"
@@ -876,10 +888,6 @@
 				"moxielite_package.vhd"
 			],
 			[
-				"sim_ram",
-				"sim_ram.vhd"
-			],
-			[
 				"rom.",
 				"rom.asm"
 			],
@@ -889,10 +897,6 @@
 			],
 			[
 				"sim_ra",
-				"sim_ram.vhd"
-			],
-			[
-				"sim",
 				"sim_ram.vhd"
 			],
 			[

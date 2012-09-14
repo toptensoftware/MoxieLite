@@ -40,6 +40,10 @@ BEGIN
 
 	-- CPU Core
 	moxielite : entity work.moxielite
+		GENERIC MAP
+		(
+			BIG_ENDIAN => '0'
+		)
 		PORT MAP
 		(
 			reset_n => reset_n,

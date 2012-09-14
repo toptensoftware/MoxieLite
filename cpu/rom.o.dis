@@ -1,9 +1,1064 @@
 
-rom.o:     file format elf32-moxie
+rom.o:     file format elf32-littlemoxie
 
 
 Disassembly of section .text:
 
 00000000 <_start>:
-   0:	2e 22       	xor	$r0, $r0
-   2:	04 00       	ret
+   0:	00 0f       	nop
+   2:	00 0f       	nop
+   4:	00 0f       	nop
+
+00000006 <nop_test_pass>:
+   6:	20 01 01 00 	ldi.l	$r0, 0x1
+   a:	00 00 
+   c:	30 01 02 00 	ldi.l	$r1, 0x2
+  10:	00 00 
+
+00000012 <beq_1_test>:
+  12:	22 0e       	cmp	$r0, $r0
+  14:	01 c0       	beq	18 <beq_1_pass>
+	...
+
+00000018 <beq_1_pass>:
+  18:	23 0e       	cmp	$r0, $r1
+  1a:	03 c0       	beq	22 <beq_2_fail>
+  1c:	00 1a 24 00 	jmpa	24 <beq_2_pass>
+  20:	00 00 
+
+00000022 <beq_2_fail>:
+	...
+
+00000024 <beq_2_pass>:
+  24:	23 0e       	cmp	$r0, $r1
+  26:	01 c4       	bne	2a <bne_1_pass>
+	...
+
+0000002a <bne_1_pass>:
+  2a:	22 0e       	cmp	$r0, $r0
+  2c:	03 c4       	bne	34 <bne_2_fail>
+  2e:	00 1a 36 00 	jmpa	36 <bne_2_pass>
+  32:	00 00 
+
+00000034 <bne_2_fail>:
+	...
+
+00000036 <bne_2_pass>:
+  36:	20 01 00 01 	ldi.l	$r0, 0xa0000100
+  3a:	00 a0 
+  3c:	30 01 00 02 	ldi.l	$r1, 0xa0000200
+  40:	00 a0 
+
+00000042 <bgtu_1_test>:
+  42:	32 0e       	cmp	$r1, $r0
+  44:	01 d4       	bgtu	48 <bgtu_1_pass>
+	...
+
+00000048 <bgtu_1_pass>:
+  48:	23 0e       	cmp	$r0, $r1
+  4a:	03 d4       	bgtu	52 <bgtu_2_fail>
+  4c:	00 1a 54 00 	jmpa	54 <bgtu_2_pass>
+  50:	00 00 
+
+00000052 <bgtu_2_fail>:
+	...
+
+00000054 <bgtu_2_pass>:
+  54:	22 0e       	cmp	$r0, $r0
+  56:	03 d4       	bgtu	5e <bgtu_3_fail>
+  58:	00 1a 60 00 	jmpa	60 <bgtu_3_pass>
+  5c:	00 00 
+
+0000005e <bgtu_3_fail>:
+	...
+
+00000060 <bgtu_3_pass>:
+  60:	23 0e       	cmp	$r0, $r1
+  62:	01 d0       	bltu	66 <bltu_1_pass>
+	...
+
+00000066 <bltu_1_pass>:
+  66:	32 0e       	cmp	$r1, $r0
+  68:	03 d0       	bltu	70 <bltu_2_fail>
+  6a:	00 1a 72 00 	jmpa	72 <bltu_2_pass>
+  6e:	00 00 
+
+00000070 <bltu_2_fail>:
+	...
+
+00000072 <bltu_2_pass>:
+  72:	22 0e       	cmp	$r0, $r0
+  74:	03 d0       	bltu	7c <bltu_3_fail>
+  76:	00 1a 7e 00 	jmpa	7e <bgeu_1_test>
+  7a:	00 00 
+
+0000007c <bltu_3_fail>:
+	...
+
+0000007e <bgeu_1_test>:
+  7e:	32 0e       	cmp	$r1, $r0
+  80:	01 e0       	bgeu	84 <bgeu_1_pass>
+	...
+
+00000084 <bgeu_1_pass>:
+  84:	23 0e       	cmp	$r0, $r1
+  86:	03 e0       	bgeu	8e <bgeu_2_fail>
+  88:	00 1a 90 00 	jmpa	90 <bgeu_2_pass>
+  8c:	00 00 
+
+0000008e <bgeu_2_fail>:
+	...
+
+00000090 <bgeu_2_pass>:
+  90:	22 0e       	cmp	$r0, $r0
+  92:	01 e0       	bgeu	96 <bgeu_3_pass>
+	...
+
+00000096 <bgeu_3_pass>:
+  96:	23 0e       	cmp	$r0, $r1
+  98:	01 e4       	bleu	9c <bleu_1_pass>
+	...
+
+0000009c <bleu_1_pass>:
+  9c:	32 0e       	cmp	$r1, $r0
+  9e:	03 e4       	bleu	a6 <bleu_2_fail>
+  a0:	00 1a a8 00 	jmpa	a8 <bleu_2_pass>
+  a4:	00 00 
+
+000000a6 <bleu_2_fail>:
+	...
+
+000000a8 <bleu_2_pass>:
+  a8:	22 0e       	cmp	$r0, $r0
+  aa:	01 e4       	bleu	ae <bleu_3_pass>
+	...
+
+000000ae <bleu_3_pass>:
+  ae:	20 01 9c ff 	ldi.l	$r0, 0xffffff9c
+  b2:	ff ff 
+  b4:	30 01 64 00 	ldi.l	$r1, 0x64
+  b8:	00 00 
+
+000000ba <bgt_1_test>:
+  ba:	32 0e       	cmp	$r1, $r0
+  bc:	01 cc       	bgt	c0 <bgt_1_pass>
+	...
+
+000000c0 <bgt_1_pass>:
+  c0:	23 0e       	cmp	$r0, $r1
+  c2:	03 cc       	bgt	ca <bgt_2_fail>
+  c4:	00 1a cc 00 	jmpa	cc <bgt_2_pass>
+  c8:	00 00 
+
+000000ca <bgt_2_fail>:
+	...
+
+000000cc <bgt_2_pass>:
+  cc:	22 0e       	cmp	$r0, $r0
+  ce:	03 cc       	bgt	d6 <bgt_3_fail>
+  d0:	00 1a d8 00 	jmpa	d8 <bgt_3_pass>
+  d4:	00 00 
+
+000000d6 <bgt_3_fail>:
+	...
+
+000000d8 <bgt_3_pass>:
+  d8:	23 0e       	cmp	$r0, $r1
+  da:	01 c8       	blt	de <blt_1_pass>
+	...
+
+000000de <blt_1_pass>:
+  de:	32 0e       	cmp	$r1, $r0
+  e0:	03 c8       	blt	e8 <blt_2_fail>
+  e2:	00 1a ea 00 	jmpa	ea <blt_2_pass>
+  e6:	00 00 
+
+000000e8 <blt_2_fail>:
+	...
+
+000000ea <blt_2_pass>:
+  ea:	22 0e       	cmp	$r0, $r0
+  ec:	03 c8       	blt	f4 <blt_3_fail>
+  ee:	00 1a f6 00 	jmpa	f6 <bge_1_test>
+  f2:	00 00 
+
+000000f4 <blt_3_fail>:
+	...
+
+000000f6 <bge_1_test>:
+  f6:	32 0e       	cmp	$r1, $r0
+  f8:	01 d8       	bge	fc <bge_1_pass>
+	...
+
+000000fc <bge_1_pass>:
+  fc:	23 0e       	cmp	$r0, $r1
+  fe:	03 d8       	bge	106 <bge_2_fail>
+ 100:	00 1a 08 01 	jmpa	108 <bge_2_pass>
+ 104:	00 00 
+
+00000106 <bge_2_fail>:
+	...
+
+00000108 <bge_2_pass>:
+ 108:	22 0e       	cmp	$r0, $r0
+ 10a:	01 d8       	bge	10e <bge_3_pass>
+	...
+
+0000010e <bge_3_pass>:
+ 10e:	23 0e       	cmp	$r0, $r1
+ 110:	01 dc       	ble	114 <ble_1_pass>
+	...
+
+00000114 <ble_1_pass>:
+ 114:	32 0e       	cmp	$r1, $r0
+ 116:	03 dc       	ble	11e <ble_2_fail>
+ 118:	00 1a 20 01 	jmpa	120 <ble_2_pass>
+ 11c:	00 00 
+
+0000011e <ble_2_fail>:
+	...
+
+00000120 <ble_2_pass>:
+ 120:	22 0e       	cmp	$r0, $r0
+ 122:	01 dc       	ble	126 <ble_3_pass>
+	...
+
+00000126 <ble_3_pass>:
+ 126:	20 01 00 00 	ldi.l	$r0, 0x0
+ 12a:	00 00 
+ 12c:	30 01 c8 00 	ldi.l	$r1, 0xc8
+ 130:	00 00 
+ 132:	40 01 c8 00 	ldi.l	$r2, 0xc8
+ 136:	00 00 
+ 138:	23 02       	mov	$r0, $r1
+ 13a:	24 0e       	cmp	$r0, $r2
+ 13c:	01 c0       	beq	140 <add_test>
+	...
+
+00000140 <add_test>:
+ 140:	20 01 64 00 	ldi.l	$r0, 0x64
+ 144:	00 00 
+ 146:	30 01 c8 00 	ldi.l	$r1, 0xc8
+ 14a:	00 00 
+ 14c:	40 01 2c 01 	ldi.l	$r2, 0x12c
+ 150:	00 00 
+ 152:	23 05       	add.l	$r0, $r1
+ 154:	24 0e       	cmp	$r0, $r2
+ 156:	01 c0       	beq	15a <add_test_pass>
+	...
+
+0000015a <add_test_pass>:
+ 15a:	20 01 2c 01 	ldi.l	$r0, 0x12c
+ 15e:	00 00 
+ 160:	30 01 64 00 	ldi.l	$r1, 0x64
+ 164:	00 00 
+ 166:	40 01 c8 00 	ldi.l	$r2, 0xc8
+ 16a:	00 00 
+ 16c:	23 29       	sub.l	$r0, $r1
+ 16e:	24 0e       	cmp	$r0, $r2
+ 170:	01 c0       	beq	174 <and_test>
+	...
+
+00000174 <and_test>:
+ 174:	20 01 78 56 	ldi.l	$r0, 0x12345678
+ 178:	34 12 
+ 17a:	30 01 f0 f0 	ldi.l	$r1, 0xf0f0f0f0
+ 17e:	f0 f0 
+ 180:	40 01 70 50 	ldi.l	$r2, 0x10305070
+ 184:	30 10 
+ 186:	23 26       	and	$r0, $r1
+ 188:	24 0e       	cmp	$r0, $r2
+ 18a:	01 c0       	beq	18e <and_test_pass>
+	...
+
+0000018e <and_test_pass>:
+ 18e:	20 01 01 01 	ldi.l	$r0, 0x12340101
+ 192:	34 12 
+ 194:	30 01 10 10 	ldi.l	$r1, 0xfff01010
+ 198:	f0 ff 
+ 19a:	40 01 11 11 	ldi.l	$r2, 0xfff41111
+ 19e:	f4 ff 
+ 1a0:	23 2b       	or	$r0, $r1
+ 1a2:	24 0e       	cmp	$r0, $r2
+ 1a4:	01 c0       	beq	1a8 <or_test_pass>
+	...
+
+000001a8 <or_test_pass>:
+ 1a8:	20 01 01 01 	ldi.l	$r0, 0x12340101
+ 1ac:	34 12 
+ 1ae:	30 01 10 10 	ldi.l	$r1, 0xfff01010
+ 1b2:	f0 ff 
+ 1b4:	40 01 11 11 	ldi.l	$r2, 0xedc41111
+ 1b8:	c4 ed 
+ 1ba:	23 2e       	xor	$r0, $r1
+ 1bc:	24 0e       	cmp	$r0, $r2
+ 1be:	01 c0       	beq	1c2 <not_test>
+	...
+
+000001c2 <not_test>:
+ 1c2:	20 01 00 00 	ldi.l	$r0, 0x0
+ 1c6:	00 00 
+ 1c8:	30 01 78 56 	ldi.l	$r1, 0x12345678
+ 1cc:	34 12 
+ 1ce:	40 01 87 a9 	ldi.l	$r2, 0xedcba987
+ 1d2:	cb ed 
+ 1d4:	23 2c       	not	$r0, $r1
+ 1d6:	24 0e       	cmp	$r0, $r2
+ 1d8:	01 c0       	beq	1dc <neg_1_test>
+	...
+
+000001dc <neg_1_test>:
+ 1dc:	20 01 00 00 	ldi.l	$r0, 0x0
+ 1e0:	00 00 
+ 1e2:	30 01 64 00 	ldi.l	$r1, 0x64
+ 1e6:	00 00 
+ 1e8:	40 01 9c ff 	ldi.l	$r2, 0xffffff9c
+ 1ec:	ff ff 
+ 1ee:	23 2a       	neg	$r0, $r1
+ 1f0:	24 0e       	cmp	$r0, $r2
+ 1f2:	01 c0       	beq	1f6 <neg_1_test_pass>
+	...
+
+000001f6 <neg_1_test_pass>:
+ 1f6:	20 01 00 00 	ldi.l	$r0, 0x0
+ 1fa:	00 00 
+ 1fc:	30 01 9c ff 	ldi.l	$r1, 0xffffff9c
+ 200:	ff ff 
+ 202:	40 01 64 00 	ldi.l	$r2, 0x64
+ 206:	00 00 
+ 208:	23 2a       	neg	$r0, $r1
+ 20a:	24 0e       	cmp	$r0, $r2
+ 20c:	01 c0       	beq	210 <inc_test>
+	...
+
+00000210 <inc_test>:
+ 210:	20 01 64 00 	ldi.l	$r0, 0x64
+ 214:	00 00 
+ 216:	40 01 5e 01 	ldi.l	$r2, 0x15e
+ 21a:	00 00 
+ 21c:	fa 82       	inc	$r0, 0xfa
+ 21e:	24 0e       	cmp	$r0, $r2
+ 220:	01 c0       	beq	224 <dec_test>
+	...
+
+00000224 <dec_test>:
+ 224:	20 01 90 01 	ldi.l	$r0, 0x190
+ 228:	00 00 
+ 22a:	40 01 96 00 	ldi.l	$r2, 0x96
+ 22e:	00 00 
+ 230:	fa 92       	dec	$r0, 0xfa
+ 232:	24 0e       	cmp	$r0, $r2
+ 234:	01 c0       	beq	238 <dec_test_pass>
+	...
+
+00000238 <dec_test_pass>:
+ 238:	20 01 00 aa 	ldi.l	$r0, 0xaaaa00
+ 23c:	aa 00 
+ 23e:	30 01 05 00 	ldi.l	$r1, 0x5
+ 242:	00 00 
+ 244:	40 01 50 55 	ldi.l	$r2, 0x55550
+ 248:	05 00 
+ 24a:	23 27       	lshr	$r0, $r1
+ 24c:	24 0e       	cmp	$r0, $r2
+ 24e:	01 c0       	beq	252 <ashl_test>
+	...
+
+00000252 <ashl_test>:
+ 252:	20 01 00 55 	ldi.l	$r0, 0x555500
+ 256:	55 00 
+ 258:	30 01 05 00 	ldi.l	$r1, 0x5
+ 25c:	00 00 
+ 25e:	40 01 00 a0 	ldi.l	$r2, 0xaaaa000
+ 262:	aa 0a 
+ 264:	23 28       	ashl	$r0, $r1
+ 266:	24 0e       	cmp	$r0, $r2
+ 268:	01 c0       	beq	26c <ashl_test_pass>
+	...
+
+0000026c <ashl_test_pass>:
+ 26c:	20 01 00 aa 	ldi.l	$r0, 0xaaaa00
+ 270:	aa 00 
+ 272:	30 01 05 00 	ldi.l	$r1, 0x5
+ 276:	00 00 
+ 278:	40 01 50 55 	ldi.l	$r2, 0x55550
+ 27c:	05 00 
+ 27e:	23 2d       	ashr	$r0, $r1
+ 280:	24 0e       	cmp	$r0, $r2
+ 282:	01 c0       	beq	286 <ashr_1_test_pass>
+	...
+
+00000286 <ashr_1_test_pass>:
+ 286:	20 01 00 aa 	ldi.l	$r0, 0x80aaaa00
+ 28a:	aa 80 
+ 28c:	30 01 05 00 	ldi.l	$r1, 0x5
+ 290:	00 00 
+ 292:	40 01 50 55 	ldi.l	$r2, 0xfc055550
+ 296:	05 fc 
+ 298:	23 2d       	ashr	$r0, $r1
+ 29a:	24 0e       	cmp	$r0, $r2
+ 29c:	01 c0       	beq	2a0 <ashr_2_test_pass>
+	...
+
+000002a0 <ashr_2_test_pass>:
+ 2a0:	20 01 64 00 	ldi.l	$r0, 0x64
+ 2a4:	00 00 
+ 2a6:	30 01 c8 00 	ldi.l	$r1, 0xc8
+ 2aa:	00 00 
+ 2ac:	40 01 20 4e 	ldi.l	$r2, 0x4e20
+ 2b0:	00 00 
+ 2b2:	23 2f       	mul.l	$r0, $r1
+ 2b4:	24 0e       	cmp	$r0, $r2
+ 2b6:	01 c0       	beq	2ba <mul_1_test_pass>
+	...
+
+000002ba <mul_1_test_pass>:
+ 2ba:	20 01 64 00 	ldi.l	$r0, 0x64
+ 2be:	00 00 
+ 2c0:	30 01 38 ff 	ldi.l	$r1, 0xffffff38
+ 2c4:	ff ff 
+ 2c6:	40 01 e0 b1 	ldi.l	$r2, 0xffffb1e0
+ 2ca:	ff ff 
+ 2cc:	23 2f       	mul.l	$r0, $r1
+ 2ce:	24 0e       	cmp	$r0, $r2
+ 2d0:	01 c0       	beq	2d4 <mul_2_test_pass>
+	...
+
+000002d4 <mul_2_test_pass>:
+ 2d4:	20 01 9c ff 	ldi.l	$r0, 0xffffff9c
+ 2d8:	ff ff 
+ 2da:	30 01 c8 00 	ldi.l	$r1, 0xc8
+ 2de:	00 00 
+ 2e0:	40 01 e0 b1 	ldi.l	$r2, 0xffffb1e0
+ 2e4:	ff ff 
+ 2e6:	23 2f       	mul.l	$r0, $r1
+ 2e8:	24 0e       	cmp	$r0, $r2
+ 2ea:	01 c0       	beq	2ee <mul_3_test_pass>
+	...
+
+000002ee <mul_3_test_pass>:
+ 2ee:	20 01 9c ff 	ldi.l	$r0, 0xffffff9c
+ 2f2:	ff ff 
+ 2f4:	30 01 38 ff 	ldi.l	$r1, 0xffffff38
+ 2f8:	ff ff 
+ 2fa:	40 01 20 4e 	ldi.l	$r2, 0x4e20
+ 2fe:	00 00 
+ 300:	23 2f       	mul.l	$r0, $r1
+ 302:	24 0e       	cmp	$r0, $r2
+ 304:	01 c0       	beq	308 <div_1_test>
+	...
+
+00000308 <div_1_test>:
+ 308:	20 01 20 4e 	ldi.l	$r0, 0x4e20
+ 30c:	00 00 
+ 30e:	30 01 c8 00 	ldi.l	$r1, 0xc8
+ 312:	00 00 
+ 314:	40 01 64 00 	ldi.l	$r2, 0x64
+ 318:	00 00 
+ 31a:	23 31       	div.l	$r0, $r1
+ 31c:	24 0e       	cmp	$r0, $r2
+ 31e:	01 c0       	beq	322 <div_1_test_pass>
+	...
+
+00000322 <div_1_test_pass>:
+ 322:	20 01 20 4e 	ldi.l	$r0, 0x4e20
+ 326:	00 00 
+ 328:	30 01 38 ff 	ldi.l	$r1, 0xffffff38
+ 32c:	ff ff 
+ 32e:	40 01 9c ff 	ldi.l	$r2, 0xffffff9c
+ 332:	ff ff 
+ 334:	23 31       	div.l	$r0, $r1
+ 336:	24 0e       	cmp	$r0, $r2
+ 338:	01 c0       	beq	33c <div_2_test_pass>
+	...
+
+0000033c <div_2_test_pass>:
+ 33c:	20 01 e0 b1 	ldi.l	$r0, 0xffffb1e0
+ 340:	ff ff 
+ 342:	30 01 c8 00 	ldi.l	$r1, 0xc8
+ 346:	00 00 
+ 348:	40 01 9c ff 	ldi.l	$r2, 0xffffff9c
+ 34c:	ff ff 
+ 34e:	23 31       	div.l	$r0, $r1
+ 350:	24 0e       	cmp	$r0, $r2
+ 352:	01 c0       	beq	356 <div_3_test_pass>
+	...
+
+00000356 <div_3_test_pass>:
+ 356:	20 01 e0 b1 	ldi.l	$r0, 0xffffb1e0
+ 35a:	ff ff 
+ 35c:	30 01 38 ff 	ldi.l	$r1, 0xffffff38
+ 360:	ff ff 
+ 362:	40 01 64 00 	ldi.l	$r2, 0x64
+ 366:	00 00 
+ 368:	23 31       	div.l	$r0, $r1
+ 36a:	24 0e       	cmp	$r0, $r2
+ 36c:	01 c0       	beq	370 <div_4_test_pass>
+	...
+
+00000370 <div_4_test_pass>:
+ 370:	20 01 00 5e 	ldi.l	$r0, 0xb2d05e00
+ 374:	d0 b2 
+ 376:	30 01 80 d1 	ldi.l	$r1, 0x8f0d180
+ 37a:	f0 08 
+ 37c:	40 01 14 00 	ldi.l	$r2, 0x14
+ 380:	00 00 
+ 382:	23 32       	udiv.l	$r0, $r1
+ 384:	24 0e       	cmp	$r0, $r2
+ 386:	01 c0       	beq	38a <mod_1_test>
+	...
+
+0000038a <mod_1_test>:
+ 38a:	20 01 2a 4e 	ldi.l	$r0, 0x4e2a
+ 38e:	00 00 
+ 390:	30 01 c8 00 	ldi.l	$r1, 0xc8
+ 394:	00 00 
+ 396:	40 01 0a 00 	ldi.l	$r2, 0xa
+ 39a:	00 00 
+ 39c:	23 33       	mod.l	$r0, $r1
+ 39e:	24 0e       	cmp	$r0, $r2
+ 3a0:	01 c0       	beq	3a4 <mod_1_test_pass>
+	...
+
+000003a4 <mod_1_test_pass>:
+ 3a4:	20 01 2a 4e 	ldi.l	$r0, 0x4e2a
+ 3a8:	00 00 
+ 3aa:	30 01 38 ff 	ldi.l	$r1, 0xffffff38
+ 3ae:	ff ff 
+ 3b0:	40 01 0a 00 	ldi.l	$r2, 0xa
+ 3b4:	00 00 
+ 3b6:	23 33       	mod.l	$r0, $r1
+ 3b8:	24 0e       	cmp	$r0, $r2
+ 3ba:	01 c0       	beq	3be <mod_2_test_pass>
+	...
+
+000003be <mod_2_test_pass>:
+ 3be:	20 01 d6 b1 	ldi.l	$r0, 0xffffb1d6
+ 3c2:	ff ff 
+ 3c4:	30 01 c8 00 	ldi.l	$r1, 0xc8
+ 3c8:	00 00 
+ 3ca:	40 01 f6 ff 	ldi.l	$r2, 0xfffffff6
+ 3ce:	ff ff 
+ 3d0:	23 33       	mod.l	$r0, $r1
+ 3d2:	24 0e       	cmp	$r0, $r2
+ 3d4:	01 c0       	beq	3d8 <mod_3_test_pass>
+	...
+
+000003d8 <mod_3_test_pass>:
+ 3d8:	20 01 d6 b1 	ldi.l	$r0, 0xffffb1d6
+ 3dc:	ff ff 
+ 3de:	30 01 38 ff 	ldi.l	$r1, 0xffffff38
+ 3e2:	ff ff 
+ 3e4:	40 01 f6 ff 	ldi.l	$r2, 0xfffffff6
+ 3e8:	ff ff 
+ 3ea:	23 33       	mod.l	$r0, $r1
+ 3ec:	24 0e       	cmp	$r0, $r2
+ 3ee:	01 c0       	beq	3f2 <mod_4_test_pass>
+	...
+
+000003f2 <mod_4_test_pass>:
+ 3f2:	20 01 64 5e 	ldi.l	$r0, 0xb2d05e64
+ 3f6:	d0 b2 
+ 3f8:	30 01 80 d1 	ldi.l	$r1, 0x8f0d180
+ 3fc:	f0 08 
+ 3fe:	40 01 64 00 	ldi.l	$r2, 0x64
+ 402:	00 00 
+ 404:	23 34       	umod.l	$r0, $r1
+ 406:	24 0e       	cmp	$r0, $r2
+ 408:	01 c0       	beq	40c <mem_1_test>
+	...
+
+0000040c <mem_1_test>:
+ 40c:	30 01 78 56 	ldi.l	$r1, 0x12345678
+ 410:	34 12 
+ 412:	30 09 00 20 	sta.l	0x2000, $r1
+ 416:	00 00 
+ 418:	40 08 00 20 	lda.l	$r2, 0x2000
+ 41c:	00 00 
+ 41e:	34 0e       	cmp	$r1, $r2
+ 420:	01 c0       	beq	424 <mem_1_long_ok>
+	...
+
+00000424 <mem_1_long_ok>:
+ 424:	44 2e       	xor	$r2, $r2
+ 426:	40 22 00 20 	lda.s	$r2, 0x2000
+ 42a:	00 00 
+ 42c:	50 01 78 56 	ldi.l	$r3, 0x5678
+ 430:	00 00 
+ 432:	45 0e       	cmp	$r2, $r3
+ 434:	01 c0       	beq	438 <mem_1_short_0_ok>
+	...
+
+00000438 <mem_1_short_0_ok>:
+ 438:	44 2e       	xor	$r2, $r2
+ 43a:	40 22 02 20 	lda.s	$r2, 0x2002
+ 43e:	00 00 
+ 440:	50 01 34 12 	ldi.l	$r3, 0x1234
+ 444:	00 00 
+ 446:	45 0e       	cmp	$r2, $r3
+ 448:	01 c0       	beq	44c <mem_1_short_1_ok>
+	...
+
+0000044c <mem_1_short_1_ok>:
+ 44c:	40 1d 00 20 	lda.b	$r2, 0x2000
+ 450:	00 00 
+ 452:	50 01 78 00 	ldi.l	$r3, 0x78
+ 456:	00 00 
+ 458:	45 0e       	cmp	$r2, $r3
+ 45a:	01 c0       	beq	45e <mem_1_byte_0_ok>
+	...
+
+0000045e <mem_1_byte_0_ok>:
+ 45e:	40 1d 01 20 	lda.b	$r2, 0x2001
+ 462:	00 00 
+ 464:	50 01 56 00 	ldi.l	$r3, 0x56
+ 468:	00 00 
+ 46a:	45 0e       	cmp	$r2, $r3
+ 46c:	01 c0       	beq	470 <mem_1_byte_1_ok>
+	...
+
+00000470 <mem_1_byte_1_ok>:
+ 470:	40 1d 02 20 	lda.b	$r2, 0x2002
+ 474:	00 00 
+ 476:	50 01 34 00 	ldi.l	$r3, 0x34
+ 47a:	00 00 
+ 47c:	45 0e       	cmp	$r2, $r3
+ 47e:	01 c0       	beq	482 <mem_1_byte_2_ok>
+	...
+
+00000482 <mem_1_byte_2_ok>:
+ 482:	40 1d 03 20 	lda.b	$r2, 0x2003
+ 486:	00 00 
+ 488:	50 01 12 00 	ldi.l	$r3, 0x12
+ 48c:	00 00 
+ 48e:	45 0e       	cmp	$r2, $r3
+ 490:	01 c0       	beq	494 <mem_1_byte_3_ok>
+	...
+
+00000494 <mem_1_byte_3_ok>:
+ 494:	30 01 78 56 	ldi.l	$r1, 0x12345678
+ 498:	34 12 
+ 49a:	30 09 01 20 	sta.l	0x2001, $r1
+ 49e:	00 00 
+ 4a0:	40 08 01 20 	lda.l	$r2, 0x2001
+ 4a4:	00 00 
+ 4a6:	34 0e       	cmp	$r1, $r2
+ 4a8:	01 c0       	beq	4ac <mem_2_long_ok>
+	...
+
+000004ac <mem_2_long_ok>:
+ 4ac:	44 2e       	xor	$r2, $r2
+ 4ae:	40 22 01 20 	lda.s	$r2, 0x2001
+ 4b2:	00 00 
+ 4b4:	50 01 78 56 	ldi.l	$r3, 0x5678
+ 4b8:	00 00 
+ 4ba:	45 0e       	cmp	$r2, $r3
+ 4bc:	01 c0       	beq	4c0 <mem_2_short_0_ok>
+	...
+
+000004c0 <mem_2_short_0_ok>:
+ 4c0:	44 2e       	xor	$r2, $r2
+ 4c2:	40 22 03 20 	lda.s	$r2, 0x2003
+ 4c6:	00 00 
+ 4c8:	50 01 34 12 	ldi.l	$r3, 0x1234
+ 4cc:	00 00 
+ 4ce:	45 0e       	cmp	$r2, $r3
+ 4d0:	01 c0       	beq	4d4 <mem_2_short_1_ok>
+	...
+
+000004d4 <mem_2_short_1_ok>:
+ 4d4:	40 1d 01 20 	lda.b	$r2, 0x2001
+ 4d8:	00 00 
+ 4da:	50 01 78 00 	ldi.l	$r3, 0x78
+ 4de:	00 00 
+ 4e0:	45 0e       	cmp	$r2, $r3
+ 4e2:	01 c0       	beq	4e6 <mem_2_byte_0_ok>
+	...
+
+000004e6 <mem_2_byte_0_ok>:
+ 4e6:	40 1d 02 20 	lda.b	$r2, 0x2002
+ 4ea:	00 00 
+ 4ec:	50 01 56 00 	ldi.l	$r3, 0x56
+ 4f0:	00 00 
+ 4f2:	45 0e       	cmp	$r2, $r3
+ 4f4:	01 c0       	beq	4f8 <mem_2_byte_1_ok>
+	...
+
+000004f8 <mem_2_byte_1_ok>:
+ 4f8:	40 1d 03 20 	lda.b	$r2, 0x2003
+ 4fc:	00 00 
+ 4fe:	50 01 34 00 	ldi.l	$r3, 0x34
+ 502:	00 00 
+ 504:	45 0e       	cmp	$r2, $r3
+ 506:	01 c0       	beq	50a <mem_2_byte_2_ok>
+	...
+
+0000050a <mem_2_byte_2_ok>:
+ 50a:	40 1d 04 20 	lda.b	$r2, 0x2004
+ 50e:	00 00 
+ 510:	50 01 12 00 	ldi.l	$r3, 0x12
+ 514:	00 00 
+ 516:	45 0e       	cmp	$r2, $r3
+ 518:	01 c0       	beq	51c <mem_2_byte_3_ok>
+	...
+
+0000051c <mem_2_byte_3_ok>:
+ 51c:	30 01 34 12 	ldi.l	$r1, 0x1234
+ 520:	00 00 
+ 522:	30 24 00 20 	sta.s	0x2000, $r1
+ 526:	00 00 
+ 528:	40 22 00 20 	lda.s	$r2, 0x2000
+ 52c:	00 00 
+ 52e:	34 0e       	cmp	$r1, $r2
+ 530:	01 c0       	beq	534 <mem_3_short_ok>
+	...
+
+00000534 <mem_3_short_ok>:
+ 534:	40 1d 00 20 	lda.b	$r2, 0x2000
+ 538:	00 00 
+ 53a:	50 01 34 00 	ldi.l	$r3, 0x34
+ 53e:	00 00 
+ 540:	45 0e       	cmp	$r2, $r3
+ 542:	01 c0       	beq	546 <mem_3_byte_0_ok>
+	...
+
+00000546 <mem_3_byte_0_ok>:
+ 546:	40 1d 01 20 	lda.b	$r2, 0x2001
+ 54a:	00 00 
+ 54c:	50 01 12 00 	ldi.l	$r3, 0x12
+ 550:	00 00 
+ 552:	45 0e       	cmp	$r2, $r3
+ 554:	01 c0       	beq	558 <mem_3_byte_1_ok>
+	...
+
+00000558 <mem_3_byte_1_ok>:
+ 558:	30 01 34 12 	ldi.l	$r1, 0x1234
+ 55c:	00 00 
+ 55e:	30 24 01 20 	sta.s	0x2001, $r1
+ 562:	00 00 
+ 564:	40 22 01 20 	lda.s	$r2, 0x2001
+ 568:	00 00 
+ 56a:	34 0e       	cmp	$r1, $r2
+ 56c:	01 c0       	beq	570 <mem_4_short_ok>
+	...
+
+00000570 <mem_4_short_ok>:
+ 570:	40 1d 01 20 	lda.b	$r2, 0x2001
+ 574:	00 00 
+ 576:	50 01 34 00 	ldi.l	$r3, 0x34
+ 57a:	00 00 
+ 57c:	45 0e       	cmp	$r2, $r3
+ 57e:	01 c0       	beq	582 <mem_4_byte_0_ok>
+	...
+
+00000582 <mem_4_byte_0_ok>:
+ 582:	40 1d 02 20 	lda.b	$r2, 0x2002
+ 586:	00 00 
+ 588:	50 01 12 00 	ldi.l	$r3, 0x12
+ 58c:	00 00 
+ 58e:	45 0e       	cmp	$r2, $r3
+ 590:	01 c0       	beq	594 <mem_4_byte_1_ok>
+	...
+
+00000594 <mem_4_byte_1_ok>:
+ 594:	30 01 12 00 	ldi.l	$r1, 0x12
+ 598:	00 00 
+ 59a:	30 1f 00 20 	sta.b	0x2000, $r1
+ 59e:	00 00 
+ 5a0:	40 1d 00 20 	lda.b	$r2, 0x2000
+ 5a4:	00 00 
+ 5a6:	34 0e       	cmp	$r1, $r2
+ 5a8:	01 c0       	beq	5ac <mem_5_ok>
+	...
+
+000005ac <mem_5_ok>:
+ 5ac:	30 01 12 00 	ldi.l	$r1, 0x12
+ 5b0:	00 00 
+ 5b2:	30 1f 01 20 	sta.b	0x2001, $r1
+ 5b6:	00 00 
+ 5b8:	40 1d 01 20 	lda.b	$r2, 0x2001
+ 5bc:	00 00 
+ 5be:	34 0e       	cmp	$r1, $r2
+ 5c0:	01 c0       	beq	5c4 <mem_6_ok>
+	...
+
+000005c4 <mem_6_ok>:
+ 5c4:	30 01 aa aa 	ldi.l	$r1, 0xaaaaaaaa
+ 5c8:	aa aa 
+ 5ca:	30 09 00 20 	sta.l	0x2000, $r1
+ 5ce:	00 00 
+ 5d0:	30 09 04 20 	sta.l	0x2004, $r1
+ 5d4:	00 00 
+ 5d6:	30 01 78 56 	ldi.l	$r1, 0x12345678
+ 5da:	34 12 
+ 5dc:	30 09 01 20 	sta.l	0x2001, $r1
+ 5e0:	00 00 
+ 5e2:	30 1d 00 20 	lda.b	$r1, 0x2000
+ 5e6:	00 00 
+ 5e8:	40 01 aa 00 	ldi.l	$r2, 0xaa
+ 5ec:	00 00 
+ 5ee:	34 0e       	cmp	$r1, $r2
+ 5f0:	01 c0       	beq	5f4 <mem_7_1_ok>
+	...
+
+000005f4 <mem_7_1_ok>:
+ 5f4:	30 1d 05 20 	lda.b	$r1, 0x2005
+ 5f8:	00 00 
+ 5fa:	34 0e       	cmp	$r1, $r2
+ 5fc:	01 c0       	beq	600 <mem_7_2_ok>
+	...
+
+00000600 <mem_7_2_ok>:
+ 600:	30 01 aa aa 	ldi.l	$r1, 0xaaaaaaaa
+ 604:	aa aa 
+ 606:	30 09 00 20 	sta.l	0x2000, $r1
+ 60a:	00 00 
+ 60c:	30 01 34 12 	ldi.l	$r1, 0x1234
+ 610:	00 00 
+ 612:	30 24 01 20 	sta.s	0x2001, $r1
+ 616:	00 00 
+ 618:	30 1d 00 20 	lda.b	$r1, 0x2000
+ 61c:	00 00 
+ 61e:	40 01 aa 00 	ldi.l	$r2, 0xaa
+ 622:	00 00 
+ 624:	34 0e       	cmp	$r1, $r2
+ 626:	01 c0       	beq	62a <mem_8_1_ok>
+	...
+
+0000062a <mem_8_1_ok>:
+ 62a:	30 1d 03 20 	lda.b	$r1, 0x2003
+ 62e:	00 00 
+ 630:	34 0e       	cmp	$r1, $r2
+ 632:	01 c0       	beq	636 <mem_8_2_ok>
+	...
+
+00000636 <mem_8_2_ok>:
+ 636:	30 01 aa aa 	ldi.l	$r1, 0xaaaaaaaa
+ 63a:	aa aa 
+ 63c:	30 09 00 20 	sta.l	0x2000, $r1
+ 640:	00 00 
+ 642:	30 01 12 00 	ldi.l	$r1, 0x12
+ 646:	00 00 
+ 648:	30 1f 00 20 	sta.b	0x2000, $r1
+ 64c:	00 00 
+ 64e:	30 1d 01 20 	lda.b	$r1, 0x2001
+ 652:	00 00 
+ 654:	40 01 aa 00 	ldi.l	$r2, 0xaa
+ 658:	00 00 
+ 65a:	34 0e       	cmp	$r1, $r2
+ 65c:	01 c0       	beq	660 <mem_10_test>
+	...
+
+00000660 <mem_10_test>:
+ 660:	30 01 aa aa 	ldi.l	$r1, 0xaaaaaaaa
+ 664:	aa aa 
+ 666:	30 09 00 20 	sta.l	0x2000, $r1
+ 66a:	00 00 
+ 66c:	30 01 12 00 	ldi.l	$r1, 0x12
+ 670:	00 00 
+ 672:	30 1f 01 20 	sta.b	0x2001, $r1
+ 676:	00 00 
+ 678:	30 1d 00 20 	lda.b	$r1, 0x2000
+ 67c:	00 00 
+ 67e:	40 01 aa 00 	ldi.l	$r2, 0xaa
+ 682:	00 00 
+ 684:	34 0e       	cmp	$r1, $r2
+ 686:	01 c0       	beq	68a <mem_10_ok>
+	...
+
+0000068a <mem_10_ok>:
+ 68a:	30 01 10 20 	ldi.l	$r1, 0x2010
+ 68e:	00 00 
+ 690:	40 01 78 56 	ldi.l	$r2, 0x12345678
+ 694:	34 12 
+ 696:	34 0b       	st.l	($r1), $r2
+ 698:	53 0a       	ld.l	$r3, ($r1)
+ 69a:	54 0e       	cmp	$r3, $r2
+ 69c:	01 c0       	beq	6a0 <mem_11_1_ok>
+	...
+
+000006a0 <mem_11_1_ok>:
+ 6a0:	50 08 10 20 	lda.l	$r3, 0x2010
+ 6a4:	00 00 
+ 6a6:	54 0e       	cmp	$r3, $r2
+ 6a8:	01 c0       	beq	6ac <mem_11_2_ok>
+	...
+
+000006ac <mem_11_2_ok>:
+ 6ac:	30 01 20 20 	ldi.l	$r1, 0x2020
+ 6b0:	00 00 
+ 6b2:	40 01 34 12 	ldi.l	$r2, 0x1234
+ 6b6:	00 00 
+ 6b8:	34 23       	st.s	($r1), $r2
+ 6ba:	53 21       	ld.s	$r3, ($r1)
+ 6bc:	54 0e       	cmp	$r3, $r2
+ 6be:	01 c0       	beq	6c2 <mem_12_1_ok>
+	...
+
+000006c2 <mem_12_1_ok>:
+ 6c2:	50 22 20 20 	lda.s	$r3, 0x2020
+ 6c6:	00 00 
+ 6c8:	54 0e       	cmp	$r3, $r2
+ 6ca:	01 c0       	beq	6ce <mem_12_2_ok>
+	...
+
+000006ce <mem_12_2_ok>:
+ 6ce:	30 01 30 20 	ldi.l	$r1, 0x2030
+ 6d2:	00 00 
+ 6d4:	40 01 12 00 	ldi.l	$r2, 0x12
+ 6d8:	00 00 
+ 6da:	34 1e       	st.b	($r1), $r2
+ 6dc:	53 1c       	ld.b	$r3, ($r1)
+ 6de:	54 0e       	cmp	$r3, $r2
+ 6e0:	01 c0       	beq	6e4 <mem_13_1_ok>
+	...
+
+000006e4 <mem_13_1_ok>:
+ 6e4:	50 1d 30 20 	lda.b	$r3, 0x2030
+ 6e8:	00 00 
+ 6ea:	54 0e       	cmp	$r3, $r2
+ 6ec:	01 c0       	beq	6f0 <mem_13_2_ok>
+	...
+
+000006f0 <mem_13_2_ok>:
+ 6f0:	30 01 10 21 	ldi.l	$r1, 0x2110
+ 6f4:	00 00 
+ 6f6:	40 01 78 56 	ldi.l	$r2, 0x12345678
+ 6fa:	34 12 
+ 6fc:	34 0d 00 01 	sto.l	0x100($r1), $r2
+ 700:	00 00 
+ 702:	53 0c 00 01 	ldo.l	$r3, 0x100($r1)
+ 706:	00 00 
+ 708:	54 0e       	cmp	$r3, $r2
+ 70a:	01 c0       	beq	70e <mem_14_1_ok>
+	...
+
+0000070e <mem_14_1_ok>:
+ 70e:	50 08 10 22 	lda.l	$r3, 0x2210
+ 712:	00 00 
+ 714:	54 0e       	cmp	$r3, $r2
+ 716:	01 c0       	beq	71a <mem_14_2_ok>
+	...
+
+0000071a <mem_14_2_ok>:
+ 71a:	30 01 20 21 	ldi.l	$r1, 0x2120
+ 71e:	00 00 
+ 720:	40 01 34 12 	ldi.l	$r2, 0x1234
+ 724:	00 00 
+ 726:	34 39 00 01 	sto.s	0x100($r1), $r2
+ 72a:	00 00 
+ 72c:	53 38 00 01 	ldo.s	$r3, 0x100($r1)
+ 730:	00 00 
+ 732:	54 0e       	cmp	$r3, $r2
+ 734:	01 c0       	beq	738 <mem_15_1_ok>
+	...
+
+00000738 <mem_15_1_ok>:
+ 738:	50 22 20 22 	lda.s	$r3, 0x2220
+ 73c:	00 00 
+ 73e:	54 0e       	cmp	$r3, $r2
+ 740:	01 c0       	beq	744 <mem_15_2_ok>
+	...
+
+00000744 <mem_15_2_ok>:
+ 744:	30 01 30 21 	ldi.l	$r1, 0x2130
+ 748:	00 00 
+ 74a:	40 01 12 00 	ldi.l	$r2, 0x12
+ 74e:	00 00 
+ 750:	34 37 00 01 	sto.b	0x100($r1), $r2
+ 754:	00 00 
+ 756:	53 36 00 01 	ldo.b	$r3, 0x100($r1)
+ 75a:	00 00 
+ 75c:	54 0e       	cmp	$r3, $r2
+ 75e:	01 c0       	beq	762 <mem_16_1_ok>
+	...
+
+00000762 <mem_16_1_ok>:
+ 762:	50 1d 30 22 	lda.b	$r3, 0x2230
+ 766:	00 00 
+ 768:	54 0e       	cmp	$r3, $r2
+ 76a:	01 c0       	beq	76e <jmp_test>
+	...
+
+0000076e <jmp_test>:
+ 76e:	20 01 78 07 	ldi.l	$r0, 0x778
+ 772:	00 00 
+ 774:	20 25       	jmp	$r0
+	...
+
+00000778 <jmp_continue>:
+ 778:	00 1a 80 07 	jmpa	780 <jmp_continue_2>
+ 77c:	00 00 
+	...
+
+00000780 <jmp_continue_2>:
+ 780:	10 01 80 20 	ldi.l	$sp, 0x2080
+ 784:	00 00 
+
+00000786 <stack_test_1>:
+ 786:	30 01 64 00 	ldi.l	$r1, 0x64
+ 78a:	00 00 
+ 78c:	13 06       	push	$sp, $r1
+ 78e:	50 01 7c 20 	ldi.l	$r3, 0x207c
+ 792:	00 00 
+ 794:	15 0e       	cmp	$sp, $r3
+ 796:	01 c0       	beq	79a <stack_test_1_ok_1>
+	...
+
+0000079a <stack_test_1_ok_1>:
+ 79a:	14 07       	pop	$sp, $r2
+ 79c:	34 0e       	cmp	$r1, $r2
+ 79e:	01 c0       	beq	7a2 <stack_test_1_ok_2>
+	...
+
+000007a2 <stack_test_1_ok_2>:
+ 7a2:	50 01 80 20 	ldi.l	$r3, 0x2080
+ 7a6:	00 00 
+ 7a8:	15 0e       	cmp	$sp, $r3
+ 7aa:	01 c0       	beq	7ae <stack_test_1_ok_3>
+	...
+
+000007ae <stack_test_1_ok_3>:
+ 7ae:	00 1a c4 07 	jmpa	7c4 <jsr_test_1>
+ 7b2:	00 00 
+
+000007b4 <add_fn>:
+ 7b4:	30 0c 0c 00 	ldo.l	$r1, 0xc($fp)
+ 7b8:	00 00 
+ 7ba:	40 0c 10 00 	ldo.l	$r2, 0x10($fp)
+ 7be:	00 00 
+ 7c0:	34 05       	add.l	$r1, $r2
+ 7c2:	00 04       	ret
+
+000007c4 <jsr_test_1>:
+ 7c4:	30 01 e8 03 	ldi.l	$r1, 0x3e8
+ 7c8:	00 00 
+ 7ca:	13 06       	push	$sp, $r1
+ 7cc:	30 01 f4 01 	ldi.l	$r1, 0x1f4
+ 7d0:	00 00 
+ 7d2:	13 06       	push	$sp, $r1
+ 7d4:	00 03 b4 07 	jsra	7b4 <add_fn>
+ 7d8:	00 00 
+ 7da:	40 01 dc 05 	ldi.l	$r2, 0x5dc
+ 7de:	00 00 
+ 7e0:	34 0e       	cmp	$r1, $r2
+ 7e2:	01 c0       	beq	7e6 <jsr_test_1_pass>
+	...
+
+000007e6 <jsr_test_1_pass>:
+ 7e6:	30 01 d0 07 	ldi.l	$r1, 0x7d0
+ 7ea:	00 00 
+ 7ec:	13 06       	push	$sp, $r1
+ 7ee:	30 01 e8 03 	ldi.l	$r1, 0x3e8
+ 7f2:	00 00 
+ 7f4:	13 06       	push	$sp, $r1
+ 7f6:	30 01 b4 07 	ldi.l	$r1, 0x7b4
+ 7fa:	00 00 
+ 7fc:	30 19       	jsr	$r1
+ 7fe:	40 01 b8 0b 	ldi.l	$r2, 0xbb8
+ 802:	00 00 
+ 804:	34 0e       	cmp	$r1, $r2
+ 806:	01 c0       	beq	80a <jsr_test_2_pass>
+	...
+
+0000080a <jsr_test_2_pass>:
+ 80a:	00 35       	brk

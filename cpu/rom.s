@@ -1,6 +1,9 @@
 	.text
 	.p2align	1
 	.global	_start
+
+	.equ BIG_ENDIAN,0
+
 _start:
 
 	############ Misc Tests ##############
@@ -17,7 +20,7 @@ nop_test_pass:
 	# Load some constants
 	ldi.l	$r0,1
 	ldi.l	$r1,2
-
+ 
 	# BEQ true test
 beq_1_test:
 	cmp		$r0,$r0
@@ -572,7 +575,11 @@ mem_1_long_ok:
 	# Read short 0
 	xor			$r2,$r2
 	lda.s		$r2,(0x2000)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x1234
+.else
+	ldi.l		$r3,0x5678
+.endif
 	cmp			$r2,$r3
 	beq			mem_1_short_0_ok
 	bad
@@ -581,7 +588,11 @@ mem_1_short_0_ok:
 	# Read short 1
 	xor			$r2,$r2
 	lda.s		$r2,(0x2002)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x5678
+.else
+	ldi.l		$r3,0x1234
+.endif
 	cmp			$r2,$r3
 	beq			mem_1_short_1_ok
 	bad
@@ -589,7 +600,11 @@ mem_1_short_1_ok:
 
 	# Read byte 0 
 	lda.b		$r2,(0x2000)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x12
+.else
+	ldi.l		$r3,0x78
+.endif
 	cmp			$r2,$r3
 	beq			mem_1_byte_0_ok
 	bad
@@ -597,7 +612,11 @@ mem_1_byte_0_ok:
 
 	# Read byte 1
 	lda.b		$r2,(0x2001)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x34
+.else
+	ldi.l		$r3,0x56
+.endif
 	cmp			$r2,$r3
 	beq			mem_1_byte_1_ok
 	bad
@@ -605,7 +624,11 @@ mem_1_byte_1_ok:
 
 	# Read byte 2
 	lda.b		$r2,(0x2002)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x56
+.else
+	ldi.l		$r3,0x34
+.endif
 	cmp			$r2,$r3
 	beq			mem_1_byte_2_ok
 	bad
@@ -613,7 +636,11 @@ mem_1_byte_2_ok:
 
 	# Read byte 3
 	lda.b		$r2,(0x2003)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x78
+.else
+	ldi.l		$r3,0x12
+.endif
 	cmp			$r2,$r3
 	beq			mem_1_byte_3_ok
 	bad
@@ -637,7 +664,11 @@ mem_2_long_ok:
 	# Read short 0
 	xor			$r2,$r2
 	lda.s		$r2,(0x2001)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x1234
+.else
+	ldi.l		$r3,0x5678
+.endif
 	cmp			$r2,$r3
 	beq			mem_2_short_0_ok
 	bad
@@ -646,7 +677,11 @@ mem_2_short_0_ok:
 	# Read short 1
 	xor			$r2,$r2
 	lda.s		$r2,(0x2003)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x5678
+.else
+	ldi.l		$r3,0x1234
+.endif
 	cmp			$r2,$r3
 	beq			mem_2_short_1_ok
 	bad
@@ -654,7 +689,11 @@ mem_2_short_1_ok:
 
 	# Read byte 0 
 	lda.b		$r2,(0x2001)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x12
+.else
+	ldi.l		$r3,0x78
+.endif
 	cmp			$r2,$r3
 	beq			mem_2_byte_0_ok
 	bad
@@ -662,7 +701,11 @@ mem_2_byte_0_ok:
 
 	# Read byte 1
 	lda.b		$r2,(0x2002)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x34
+.else
+	ldi.l		$r3,0x56
+.endif
 	cmp			$r2,$r3
 	beq			mem_2_byte_1_ok
 	bad
@@ -670,7 +713,11 @@ mem_2_byte_1_ok:
 
 	# Read byte 2
 	lda.b		$r2,(0x2003)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x56
+.else
+	ldi.l		$r3,0x34
+.endif
 	cmp			$r2,$r3
 	beq			mem_2_byte_2_ok
 	bad
@@ -678,7 +725,11 @@ mem_2_byte_2_ok:
 
 	# Read byte 3
 	lda.b		$r2,(0x2004)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x78
+.else
+	ldi.l		$r3,0x12
+.endif
 	cmp			$r2,$r3
 	beq			mem_2_byte_3_ok
 	bad
@@ -701,7 +752,11 @@ mem_3_short_ok:
 
 	# Read byte 0 
 	lda.b		$r2,(0x2000)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x12
+.else
+	ldi.l		$r3,0x34
+.endif
 	cmp			$r2,$r3
 	beq			mem_3_byte_0_ok
 	bad
@@ -709,7 +764,11 @@ mem_3_byte_0_ok:
 
 	# Read byte 1
 	lda.b		$r2,(0x2001)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x34
+.else
+	ldi.l		$r3,0x12
+.endif
 	cmp			$r2,$r3
 	beq			mem_3_byte_1_ok
 	bad
@@ -731,7 +790,11 @@ mem_4_short_ok:
 
 	# Read byte 0 
 	lda.b		$r2,(0x2001)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x12
+.else
+	ldi.l		$r3,0x34
+.endif
 	cmp			$r2,$r3
 	beq			mem_4_byte_0_ok
 	bad
@@ -739,7 +802,11 @@ mem_4_byte_0_ok:
 
 	# Read byte 1
 	lda.b		$r2,(0x2002)
+.if BIG_ENDIAN
 	ldi.l		$r3,0x34
+.else
+	ldi.l		$r3,0x12
+.endif
 	cmp			$r2,$r3
 	beq			mem_4_byte_1_ok
 	bad

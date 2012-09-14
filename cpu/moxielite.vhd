@@ -9,7 +9,8 @@ use std.textio.all; --  Imports the standard textio package.
 ENTITY moxielite IS
 	generic
 	(
-		BOOT_ADDRESS : std_logic_vector(31 downto 0) := x"00001000"
+		BOOT_ADDRESS : std_logic_vector(31 downto 0) := x"00001000";
+		BIG_ENDIAN : std_logic := '1'
 	);
 	port
 	(
@@ -109,7 +110,7 @@ BEGIN
  	-- Misc continuous assignments
  	reset <= NOT reset_n;
  	PC_plus_2 <= std_logic_vector(unsigned(PC) + 2);
- 	PC_plus_operand_A <= std_logic_vector(unsigned(PC) + unsigned(operand_A) - 2);
+ 	PC_plus_operand_A <= std_logic_vector(unsigned(PC) + unsigned(operand_A));
  	addr_reg_plus_cycle_bytes <= std_logic_vector(unsigned(addr_reg) + unsigned(cycle_bytes));
  	data_byte_index_plus_cycle_bytes <= std_logic_vector(unsigned(data_byte_index) + unsigned(cycle_bytes));
  	LFlag <= SFlag xor OFlag; -- less than
@@ -535,21 +536,29 @@ BEGIN
 	bswap_data_reg : process(data_reg, data_byte_count)
 	begin
 
-		case data_byte_count is
+		if BIG_ENDIAN='1' then
 
-	 		when "001" =>
-	 			data_bswap <= data_reg;
+			case data_byte_count is
 
-	 		when "010" =>
-	 			data_bswap <= data_reg(23 downto 16) & data_reg(31 downto 24) & data_reg(7 downto 0) & data_reg(15 downto 8);
+		 		when "001" =>
+		 			data_bswap <= data_reg;
 
-			when "100" =>
-	 			data_bswap <= data_reg(7 downto 0) & data_reg(15 downto 8) & data_reg(23 downto 16) & data_reg(31 downto 24);
+		 		when "010" =>
+		 			data_bswap <= data_reg(23 downto 16) & data_reg(31 downto 24) & data_reg(7 downto 0) & data_reg(15 downto 8);
 
-	 		when others =>
-	 			data_bswap <= x"00000000";
+				when "100" =>
+		 			data_bswap <= data_reg(7 downto 0) & data_reg(15 downto 8) & data_reg(23 downto 16) & data_reg(31 downto 24);
 
-	 	end case;
+		 		when others =>
+		 			data_bswap <= x"00000000";
+
+		 	end case;
+
+		 else
+
+		 	data_bswap <= data_reg;
+
+		 end if;
 
 	end process bswap_data_reg;
 
@@ -600,7 +609,11 @@ BEGIN
 						-- Update PC
 						PC <= PC_plus_2;
 
-						instruction <= din(7 downto 0) & din(15 downto 8);
+						if BIG_ENDIAN='1' then
+							instruction <= din(7 downto 0) & din(15 downto 8);
+						else
+							instruction <= din;
+						end if;
  						state <= state_decode;
 
  					end if;

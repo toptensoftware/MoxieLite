@@ -582,8 +582,8 @@ Disassembly of section .text:
     1424:	2e 44       	xor	$r2, $r2
     1426:	22 40 00 00 	lda.s	$r2, 0x2000
     142a:	20 00 
-    142c:	01 50 00 00 	ldi.l	$r3, 0x1234
-    1430:	12 34 
+    142c:	01 50 00 00 	ldi.l	$r3, 0x5678
+    1430:	56 78 
     1432:	0e 45       	cmp	$r2, $r3
     1434:	c0 02       	beq	1438 <mem_1_short_0_ok>
 	...
@@ -592,8 +592,8 @@ Disassembly of section .text:
     1438:	2e 44       	xor	$r2, $r2
     143a:	22 40 00 00 	lda.s	$r2, 0x2002
     143e:	20 02 
-    1440:	01 50 00 00 	ldi.l	$r3, 0x5678
-    1444:	56 78 
+    1440:	01 50 00 00 	ldi.l	$r3, 0x1234
+    1444:	12 34 
     1446:	0e 45       	cmp	$r2, $r3
     1448:	c0 02       	beq	144c <mem_1_short_1_ok>
 	...
@@ -601,8 +601,8 @@ Disassembly of section .text:
 0000144c <mem_1_short_1_ok>:
     144c:	1d 40 00 00 	lda.b	$r2, 0x2000
     1450:	20 00 
-    1452:	01 50 00 00 	ldi.l	$r3, 0x12
-    1456:	00 12 
+    1452:	01 50 00 00 	ldi.l	$r3, 0x78
+    1456:	00 78 
     1458:	0e 45       	cmp	$r2, $r3
     145a:	c0 02       	beq	145e <mem_1_byte_0_ok>
 	...
@@ -610,8 +610,8 @@ Disassembly of section .text:
 0000145e <mem_1_byte_0_ok>:
     145e:	1d 40 00 00 	lda.b	$r2, 0x2001
     1462:	20 01 
-    1464:	01 50 00 00 	ldi.l	$r3, 0x34
-    1468:	00 34 
+    1464:	01 50 00 00 	ldi.l	$r3, 0x56
+    1468:	00 56 
     146a:	0e 45       	cmp	$r2, $r3
     146c:	c0 02       	beq	1470 <mem_1_byte_1_ok>
 	...
@@ -619,8 +619,8 @@ Disassembly of section .text:
 00001470 <mem_1_byte_1_ok>:
     1470:	1d 40 00 00 	lda.b	$r2, 0x2002
     1474:	20 02 
-    1476:	01 50 00 00 	ldi.l	$r3, 0x56
-    147a:	00 56 
+    1476:	01 50 00 00 	ldi.l	$r3, 0x34
+    147a:	00 34 
     147c:	0e 45       	cmp	$r2, $r3
     147e:	c0 02       	beq	1482 <mem_1_byte_2_ok>
 	...
@@ -628,8 +628,8 @@ Disassembly of section .text:
 00001482 <mem_1_byte_2_ok>:
     1482:	1d 40 00 00 	lda.b	$r2, 0x2003
     1486:	20 03 
-    1488:	01 50 00 00 	ldi.l	$r3, 0x78
-    148c:	00 78 
+    1488:	01 50 00 00 	ldi.l	$r3, 0x12
+    148c:	00 12 
     148e:	0e 45       	cmp	$r2, $r3
     1490:	c0 02       	beq	1494 <mem_1_byte_3_ok>
 	...
@@ -649,8 +649,8 @@ Disassembly of section .text:
     14ac:	2e 44       	xor	$r2, $r2
     14ae:	22 40 00 00 	lda.s	$r2, 0x2001
     14b2:	20 01 
-    14b4:	01 50 00 00 	ldi.l	$r3, 0x1234
-    14b8:	12 34 
+    14b4:	01 50 00 00 	ldi.l	$r3, 0x5678
+    14b8:	56 78 
     14ba:	0e 45       	cmp	$r2, $r3
     14bc:	c0 02       	beq	14c0 <mem_2_short_0_ok>
 	...
@@ -659,8 +659,8 @@ Disassembly of section .text:
     14c0:	2e 44       	xor	$r2, $r2
     14c2:	22 40 00 00 	lda.s	$r2, 0x2003
     14c6:	20 03 
-    14c8:	01 50 00 00 	ldi.l	$r3, 0x5678
-    14cc:	56 78 
+    14c8:	01 50 00 00 	ldi.l	$r3, 0x1234
+    14cc:	12 34 
     14ce:	0e 45       	cmp	$r2, $r3
     14d0:	c0 02       	beq	14d4 <mem_2_short_1_ok>
 	...
@@ -668,8 +668,8 @@ Disassembly of section .text:
 000014d4 <mem_2_short_1_ok>:
     14d4:	1d 40 00 00 	lda.b	$r2, 0x2001
     14d8:	20 01 
-    14da:	01 50 00 00 	ldi.l	$r3, 0x12
-    14de:	00 12 
+    14da:	01 50 00 00 	ldi.l	$r3, 0x78
+    14de:	00 78 
     14e0:	0e 45       	cmp	$r2, $r3
     14e2:	c0 02       	beq	14e6 <mem_2_byte_0_ok>
 	...
@@ -677,8 +677,8 @@ Disassembly of section .text:
 000014e6 <mem_2_byte_0_ok>:
     14e6:	1d 40 00 00 	lda.b	$r2, 0x2002
     14ea:	20 02 
-    14ec:	01 50 00 00 	ldi.l	$r3, 0x34
-    14f0:	00 34 
+    14ec:	01 50 00 00 	ldi.l	$r3, 0x56
+    14f0:	00 56 
     14f2:	0e 45       	cmp	$r2, $r3
     14f4:	c0 02       	beq	14f8 <mem_2_byte_1_ok>
 	...
@@ -686,8 +686,8 @@ Disassembly of section .text:
 000014f8 <mem_2_byte_1_ok>:
     14f8:	1d 40 00 00 	lda.b	$r2, 0x2003
     14fc:	20 03 
-    14fe:	01 50 00 00 	ldi.l	$r3, 0x56
-    1502:	00 56 
+    14fe:	01 50 00 00 	ldi.l	$r3, 0x34
+    1502:	00 34 
     1504:	0e 45       	cmp	$r2, $r3
     1506:	c0 02       	beq	150a <mem_2_byte_2_ok>
 	...
@@ -695,8 +695,8 @@ Disassembly of section .text:
 0000150a <mem_2_byte_2_ok>:
     150a:	1d 40 00 00 	lda.b	$r2, 0x2004
     150e:	20 04 
-    1510:	01 50 00 00 	ldi.l	$r3, 0x78
-    1514:	00 78 
+    1510:	01 50 00 00 	ldi.l	$r3, 0x12
+    1514:	00 12 
     1516:	0e 45       	cmp	$r2, $r3
     1518:	c0 02       	beq	151c <mem_2_byte_3_ok>
 	...
@@ -715,8 +715,8 @@ Disassembly of section .text:
 00001534 <mem_3_short_ok>:
     1534:	1d 40 00 00 	lda.b	$r2, 0x2000
     1538:	20 00 
-    153a:	01 50 00 00 	ldi.l	$r3, 0x12
-    153e:	00 12 
+    153a:	01 50 00 00 	ldi.l	$r3, 0x34
+    153e:	00 34 
     1540:	0e 45       	cmp	$r2, $r3
     1542:	c0 02       	beq	1546 <mem_3_byte_0_ok>
 	...
@@ -724,8 +724,8 @@ Disassembly of section .text:
 00001546 <mem_3_byte_0_ok>:
     1546:	1d 40 00 00 	lda.b	$r2, 0x2001
     154a:	20 01 
-    154c:	01 50 00 00 	ldi.l	$r3, 0x34
-    1550:	00 34 
+    154c:	01 50 00 00 	ldi.l	$r3, 0x12
+    1550:	00 12 
     1552:	0e 45       	cmp	$r2, $r3
     1554:	c0 02       	beq	1558 <mem_3_byte_1_ok>
 	...
@@ -744,8 +744,8 @@ Disassembly of section .text:
 00001570 <mem_4_short_ok>:
     1570:	1d 40 00 00 	lda.b	$r2, 0x2001
     1574:	20 01 
-    1576:	01 50 00 00 	ldi.l	$r3, 0x12
-    157a:	00 12 
+    1576:	01 50 00 00 	ldi.l	$r3, 0x34
+    157a:	00 34 
     157c:	0e 45       	cmp	$r2, $r3
     157e:	c0 02       	beq	1582 <mem_4_byte_0_ok>
 	...
@@ -753,8 +753,8 @@ Disassembly of section .text:
 00001582 <mem_4_byte_0_ok>:
     1582:	1d 40 00 00 	lda.b	$r2, 0x2002
     1586:	20 02 
-    1588:	01 50 00 00 	ldi.l	$r3, 0x34
-    158c:	00 34 
+    1588:	01 50 00 00 	ldi.l	$r3, 0x12
+    158c:	00 12 
     158e:	0e 45       	cmp	$r2, $r3
     1590:	c0 02       	beq	1594 <mem_4_byte_1_ok>
 	...
