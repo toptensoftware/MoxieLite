@@ -1,4 +1,3 @@
-#include <string.h>
 
 // External references to the PCU's memory map
 extern char dma_buffer[];

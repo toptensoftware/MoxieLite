@@ -21,6 +21,8 @@ _start:
 
 	# Jump to main
 	jsra	main
+
+	# Should never get here
 	brk
 
 	# This section defines the PCU's "ports" which used to be 
@@ -45,8 +47,8 @@ _start:
 	port_reserved:			.word	0 	# 0x04
 	port_sd_op_cmd:			.word 	0	# 0x06
 	port_sd_status:			.word	0	# 0x08
-	port_sd_block_number:	.word 	0x99	# 0x0A
-							.word	0xAA
+	port_sd_block_number:	.word 	0x0	# 0x0A
+							.word	0x0
 	port_sd_dma_bank_select:.word 	0 	# 0x0E
 	port_console_mode:		.word 	0	# 0x10
 	port_cursor_position:	.word	0	# 0x12
