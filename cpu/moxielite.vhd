@@ -134,6 +134,9 @@ BEGIN
  			when state_error =>
  				addr_internal <= PC;
 
+ 			when state_execute_brk =>
+ 				addr_internal <= PC;
+
  			when state_fetch_memcycle | state_fetch_wait =>
  				addr_internal <= PC;
  				rd_n <= '0';
@@ -419,10 +422,10 @@ BEGIN
 			when state_execute_jsr_2 =>
 				sp_offset <= x"FFFFFFFC";		-- -4
 
-			when state_execute_ret =>
+			when state_execute_ret_2 =>
 				sp_offset <= x"00000004";		-- 4
 
-			when state_execute_ret_2 =>
+			when state_execute_ret_3 =>
 				sp_offset <= x"00000008";		-- 8
 
 			when others =>
@@ -870,34 +873,36 @@ BEGIN
 				when state_execute_ret =>
 
 					-- Pop FP
-					addr_reg <= regfile(1);
+					addr_reg <= regfile(0);
 					data_reg <= (others => '0');
 					data_byte_index <= "000";
 					data_byte_count <= "100";
 					state_next <= state_execute_ret_2;
 					state <= state_load_memcycle;
 
-					regfile(1) <= sp_plus_offset;		-- SP+=4
+					regfile(1) <= regfile(0);		-- SP <= FP
 
 				when state_execute_ret_2 =>
 
 					-- Store FP
 					regfile(0) <= data_bswap;
 
+
 					-- Pop PC
-					addr_reg <= regfile(1);
+					addr_reg <= sp_plus_offset;
 					data_reg <= (others => '0');
 					data_byte_index <= "000";
 					data_byte_count <= "100";
 					state_next <= state_execute_ret_3;
 					state <= state_load_memcycle;
 
-					regfile(1) <= sp_plus_offset;		-- SP+=8
+					regfile(1) <= sp_plus_offset;		-- SP+=4
 
 				when state_execute_ret_3 =>
 
 					PC <= data_bswap;	
 					state <= state_fetch_pre;
+					regfile(1) <= sp_plus_offset;		-- SP+=8
 
 				when state_execute_alu2 =>
 

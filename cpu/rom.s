@@ -1096,9 +1096,13 @@ stack_test_1_ok_3:
 	jmpa		jsr_test_1
 
 add_fn:
+	push		$sp,$r0
 	ldo.l		$r1,12 ($fp)
 	ldo.l		$r2,16 ($fp)
 	add.l		$r1,$r2
+	mov			$r12,$fp
+	dec			$r12,4
+	pop			$r12,$r0
 	ret
 
 jsr_test_1:

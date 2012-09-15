@@ -1018,47 +1018,51 @@ Disassembly of section .text:
 	...
 
 000007ae <stack_test_1_ok_3>:
- 7ae:	00 1a c4 07 	jmpa	7c4 <jsr_test_1>
+ 7ae:	00 1a cc 07 	jmpa	7cc <jsr_test_1>
  7b2:	00 00 
 
 000007b4 <add_fn>:
- 7b4:	30 0c 0c 00 	ldo.l	$r1, 0xc($fp)
- 7b8:	00 00 
- 7ba:	40 0c 10 00 	ldo.l	$r2, 0x10($fp)
- 7be:	00 00 
- 7c0:	34 05       	add.l	$r1, $r2
- 7c2:	00 04       	ret
+ 7b4:	12 06       	push	$sp, $r0
+ 7b6:	30 0c 0c 00 	ldo.l	$r1, 0xc($fp)
+ 7ba:	00 00 
+ 7bc:	40 0c 10 00 	ldo.l	$r2, 0x10($fp)
+ 7c0:	00 00 
+ 7c2:	34 05       	add.l	$r1, $r2
+ 7c4:	e0 02       	mov	$r12, $fp
+ 7c6:	04 9e       	dec	$r12, 0x4
+ 7c8:	e2 07       	pop	$r12, $r0
+ 7ca:	00 04       	ret
 
-000007c4 <jsr_test_1>:
- 7c4:	30 01 e8 03 	ldi.l	$r1, 0x3e8
- 7c8:	00 00 
- 7ca:	13 06       	push	$sp, $r1
- 7cc:	30 01 f4 01 	ldi.l	$r1, 0x1f4
+000007cc <jsr_test_1>:
+ 7cc:	30 01 e8 03 	ldi.l	$r1, 0x3e8
  7d0:	00 00 
  7d2:	13 06       	push	$sp, $r1
- 7d4:	00 03 b4 07 	jsra	7b4 <add_fn>
+ 7d4:	30 01 f4 01 	ldi.l	$r1, 0x1f4
  7d8:	00 00 
- 7da:	40 01 dc 05 	ldi.l	$r2, 0x5dc
- 7de:	00 00 
- 7e0:	34 0e       	cmp	$r1, $r2
- 7e2:	01 c0       	beq	7e6 <jsr_test_1_pass>
+ 7da:	13 06       	push	$sp, $r1
+ 7dc:	00 03 b4 07 	jsra	7b4 <add_fn>
+ 7e0:	00 00 
+ 7e2:	40 01 dc 05 	ldi.l	$r2, 0x5dc
+ 7e6:	00 00 
+ 7e8:	34 0e       	cmp	$r1, $r2
+ 7ea:	01 c0       	beq	7ee <jsr_test_1_pass>
 	...
 
-000007e6 <jsr_test_1_pass>:
- 7e6:	30 01 d0 07 	ldi.l	$r1, 0x7d0
- 7ea:	00 00 
- 7ec:	13 06       	push	$sp, $r1
- 7ee:	30 01 e8 03 	ldi.l	$r1, 0x3e8
+000007ee <jsr_test_1_pass>:
+ 7ee:	30 01 d0 07 	ldi.l	$r1, 0x7d0
  7f2:	00 00 
  7f4:	13 06       	push	$sp, $r1
- 7f6:	30 01 b4 07 	ldi.l	$r1, 0x7b4
+ 7f6:	30 01 e8 03 	ldi.l	$r1, 0x3e8
  7fa:	00 00 
- 7fc:	30 19       	jsr	$r1
- 7fe:	40 01 b8 0b 	ldi.l	$r2, 0xbb8
+ 7fc:	13 06       	push	$sp, $r1
+ 7fe:	30 01 b4 07 	ldi.l	$r1, 0x7b4
  802:	00 00 
- 804:	34 0e       	cmp	$r1, $r2
- 806:	01 c0       	beq	80a <jsr_test_2_pass>
+ 804:	30 19       	jsr	$r1
+ 806:	40 01 b8 0b 	ldi.l	$r2, 0xbb8
+ 80a:	00 00 
+ 80c:	34 0e       	cmp	$r1, $r2
+ 80e:	01 c0       	beq	812 <jsr_test_2_pass>
 	...
 
-0000080a <jsr_test_2_pass>:
- 80a:	00 35       	brk
+00000812 <jsr_test_2_pass>:
+ 812:	00 35       	brk
