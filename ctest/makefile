@@ -17,7 +17,8 @@ OUT = ./build
 ## List of all object files
 OBJ_FILES = \
 	$(OUT)/startup.o \
-	$(OUT)/main.o
+	$(OUT)/main.o \
+	$(OUT)/threading.o
 
 ## Link Step
 $(OUT)/ctest.bin: $(OBJ_FILES)
@@ -29,7 +30,9 @@ $(OUT)/ctest.bin: $(OBJ_FILES)
 
 $(OUT)/startup.o: startup.s
 
-$(OUT)/main.o: main.c
+$(OUT)/main.o: main.c threading.h
+
+$(OUT)/main.o: threading.c threading.h
 
 
 $(OUT)/%.o: %.s
