@@ -57,7 +57,7 @@ ARCHITECTURE behavior OF moxielite IS
 
 	-- Instruction decode
 	signal instruction : std_logic_vector(15 downto 0);
-	signal execute_state : state_reset;
+	signal execute_state : state_type := state_reset;
 	signal aluop : aluop_type;
 	signal condition : condition_type;
 	signal addrmode : addrmode_type;
@@ -599,7 +599,7 @@ BEGIN
  					state <= state_reset_1;
 
  				when state_reset_1 =>
- 					state <= state_reset_2
+ 					state <= state_reset_2;
 
  				when state_reset_2 =>
  					state <= state_fetch_pre;
