@@ -309,17 +309,6 @@
 			]
 		]
 	},
-	"buffers":
-	[
-		{
-			"file": "makefile",
-			"settings":
-			{
-				"buffer_size": 1364,
-				"line_ending": "Windows"
-			}
-		}
-	],
 	"build_system": "Packages/VHDL/Xilinx Makefile.sublime-build",
 	"command_palette":
 	{
@@ -580,6 +569,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"jsr",
+			"sp_plus_offset",
+			"jsr",
+			"BIG_END",
+			"big_end",
 			"pc_plus_oper",
 			"brk",
 			"BIG_END",
@@ -702,12 +696,7 @@
 			"st_l",
 			"ptr_base",
 			"decoder",
-			"memptr_load",
-			"ldo",
-			"wr_h",
-			"sta_",
-			"execute_store",
-			"ldi_l"
+			"memptr_load"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -809,41 +798,6 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"groups":
-	[
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 0,
-					"file": "makefile",
-					"settings":
-					{
-						"buffer_size": 1364,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1230,
-								1268
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 575.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		}
-	],
 	"incremental_find":
 	{
 		"height": 0.0

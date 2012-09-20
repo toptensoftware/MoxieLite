@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"port_led",
+				"port_leds_7seg"
+			],
+			[
 				"cpu",
 				"cpu_wr_h_n"
 			],
@@ -312,9 +316,17 @@
 	"build_system": "Packages/Makefile/Make.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 81.0,
 		"selected_items":
 		[
+			[
+				"clean",
+				"Build: Clean"
+			],
+			[
+				"clea",
+				"Build: Clean"
+			],
 			[
 				"ent",
 				"VHDL: Paste Entity Instance"
@@ -358,10 +370,6 @@
 			[
 				"Core",
 				"Build: Core Generator"
-			],
-			[
-				"clea",
-				"Build: Clean"
 			],
 			[
 				"run",
@@ -421,10 +429,27 @@
 	},
 	"file_history":
 	[
+		"/C/Users/bradr/dev/fpga/moxie/ctest/threading.c",
+		"/C/Users/bradr/dev/fpga/.git/modules",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/startup.s",
+		"/C/Users/bradr/dev/fpga/moxie/ToolChain/moxie-elf/lib/ldscripts/elf32moxie.x",
+		"/C/Users/bradr/dev/fpga/moxie/ToolChain/moxie-elf/lib/moxie-elf-common.ld",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/main.c",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/build/ctest.map",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/moxie-elf-embedded.ld",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/makefile",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/makemakefile",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/threading.c: makefile",
+		"/cygdrive/z/gcc/newlib/src/newlib/libc/stdlib/exit.c",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/.gitignore",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/build/ctest.bin",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/main.s",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/main.i",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/build/ctest.elf.dis",
+		"/C/Users/bradr/dev/fpga/moxie/ctest/build/ctest.elf",
 		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/Makefile/Make.sublime-build",
 		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/Makefile/Cygwin Makefile.sublime-build",
 		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/Makefile/NMake.sublime-build",
-		"/C/Users/bradr/dev/fpga/moxie/ctest/main.c",
 		"/C/Users/bradr/dev/fpga/moxie/cpu/rom.elf.dis",
 		"/C/Users/bradr/dev/fpga/moxie/cpu/rom.s",
 		"/C/Users/bradr/dev/fpga/moxie/cpu/moxielite_alu.vhd",
@@ -531,24 +556,7 @@
 		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/proc_rtl.vhd",
 		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/regshiftmux_regshift.vhd",
 		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/segregfile_rtl.vhd",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/alu_rtl.vhd",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/biu_struct.vhd",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86bench.vhd",
-		"/C/Users/bradr/dev/fpga/Nexys3/zet/cores/zet/rtl/rom_def.v",
-		"/C/Users/bradr/dev/fpga/Nexys3/zet/cores/zet/rtl/micro_rom.dat",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/.gitignore",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/urep_cpu86",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/urep_z80",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/ERROR:HDLCompiler",
-		"/Z/FPGA/cpu86bench/PeripheralController.vhd",
-		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/PeripheralController.vhd",
-		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/Z/FPGA/cpu86bench/ipcore_dir/coregen.cgc",
-		"/Z/FPGA/cpu86bench/cpu86bench.vhd",
-		"/Z/FPGA/cpu86bench/Crtc6545.vhd",
-		"/Z/FPGA/cpu86bench/ipcore_dir/.gitignore",
-		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/VHDL/VhdlUtils.sublime-commands"
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/alu_rtl.vhd"
 	],
 	"find":
 	{
@@ -569,6 +577,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"g_exit_sp",
+			"g_pFirst",
+			"\\n\\t\\",
+			"99",
+			"ports",
+			":",
+			"dma",
+			" - ",
+			"strcpu",
+			"libc",
+			"78",
 			"pc_plus_oper",
 			"brk",
 			"BIG_END",
@@ -685,18 +704,7 @@
 			"state_deref",
 			"deref",
 			"data_reg",
-			"din",
-			"ptr_size",
-			"ptrsize",
-			"st_l",
-			"ptr_base",
-			"decoder",
-			"memptr_load",
-			"ldo",
-			"wr_h",
-			"sta_",
-			"execute_store",
-			"ldi_l"
+			"din"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -704,6 +712,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\\n\\",
+			"",
 			"mem_16",
 			"mem_15",
 			"mem_14",

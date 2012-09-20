@@ -32,7 +32,7 @@ ARCHITECTURE behavior OF moxielite IS
 	signal reset : std_logic;
  
  	-- Program counter
-	signal PC : std_logic_vector(31 downto 0);
+	signal PC : std_logic_vector(31 downto 0) := BOOT_ADDRESS;
 	signal PC_plus_2 : std_logic_vector(31 downto 0);
 	signal PC_plus_operand_A : std_logic_vector(31 downto 0);
 
@@ -57,14 +57,14 @@ ARCHITECTURE behavior OF moxielite IS
 
 	-- Instruction decode
 	signal instruction : std_logic_vector(15 downto 0);
-	signal execute_state : state_type;
+	signal execute_state : state_reset;
 	signal aluop : aluop_type;
 	signal condition : condition_type;
 	signal addrmode : addrmode_type;
 	signal instruction_form : instruction_form_type;
 
 	-- State machine
-	signal state : state_type;
+	signal state : state_type := state_fetch_pre;
 	signal state_next : state_type;
 	signal state_resolved : state_type;
 	signal has_imm : std_logic;
@@ -574,7 +574,7 @@ BEGIN
  		if reset_n='0' then
 
  			PC <= BOOT_ADDRESS;
- 			state <= state_fetch_pre;
+ 			state <= state_reset;
  			addr_reg <= (others => '0');
  			data_reg <= (others => '0');
  			data_byte_index <= (others => '0');
@@ -594,6 +594,15 @@ BEGIN
 
 			-- Handle state
  			case state_resolved is
+
+ 				when state_reset =>
+ 					state <= state_reset_1;
+
+ 				when state_reset_1 =>
+ 					state <= state_reset_2
+
+ 				when state_reset_2 =>
+ 					state <= state_fetch_pre;
 
  				when state_fetch_pre =>
 
