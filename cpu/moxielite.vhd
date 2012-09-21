@@ -596,12 +596,6 @@ BEGIN
  			case state_resolved is
 
  				when state_reset =>
- 					state <= state_reset_1;
-
- 				when state_reset_1 =>
- 					state <= state_reset_2;
-
- 				when state_reset_2 =>
  					state <= state_fetch_pre;
 
  				when state_fetch_pre =>

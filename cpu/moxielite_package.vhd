@@ -41,8 +41,6 @@ type aluop_type is
 type state_type is
 (
 	state_reset,
-	state_reset_1,
-	state_reset_2,
 
 	-- Instruction fetch stage
 	state_fetch_pre,
