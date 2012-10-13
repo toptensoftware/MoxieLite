@@ -1,0 +1,70 @@
+# Nexys 3 Basic I/O Connections
+# Clock
+Net "clock" LOC=V10 |IOSTANDARD=LVCMOS33;
+Net "clock" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;
+
+TIMESPEC TS_XDOMAINS_SYSTOPCU = FROM "clock_core_clkout1" TO "clock_core_clkout2" TIG;
+TIMESPEC TS_XDOMAINS_PCUTOSYS = FROM "clock_core_clkout2" TO "clock_core_clkout1" TIG;
+
+# Buttons
+NET "reset" LOC = B8;		# Select
+
+# LED's (right to left)
+Net "leds<0>" LOC = U16 |IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L2P_CMPCLK, Sch name = LD0
+Net "leds<1>" LOC = V16 |IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L2N_CMPMOSI, Sch name = LD1
+Net "leds<2>" LOC = U15 |IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L5P, Sch name = LD2
+Net "leds<3>" LOC = V15 |IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L5N, Sch name = LD3
+Net "leds<4>" LOC = M11 |IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L15P, Sch name = LD4
+Net "leds<5>" LOC = N11 |IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L15N, Sch name = LD5
+Net "leds<6>" LOC = R11 |IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L16P, Sch name = LD6
+Net "leds<7>" LOC = T11 |IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L16N_VREF, Sch name = LD7
+
+## Memory
+Net "MemWR" LOC = M16 |IOSTANDARD = LVCMOS33;
+Net "MemOE" LOC = L18 |IOSTANDARD = LVCMOS33;
+Net "FlashCS" LOC = L17 |IOSTANDARD = LVCMOS33;
+Net "FlashRp" LOC = T4  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<1>" LOC = K18  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<2>" LOC = K17  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<3>" LOC = J18  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<4>" LOC = J16  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<5>" LOC = G18  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<6>" LOC = G16  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<7>" LOC = H16  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<8>" LOC = H15  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<9>" LOC = H14  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<10>" LOC = H13  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<11>" LOC = F18  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<12>" LOC = F17  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<13>" LOC = K13  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<14>" LOC = K12  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<15>" LOC = E18  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<16>" LOC = E16  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<17>" LOC = G13  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<18>" LOC = H12  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<19>" LOC = D18  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<20>" LOC = D17  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<21>" LOC = G14  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<22>" LOC = F14  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<23>" LOC = C18  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<24>" LOC = C17  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<25>" LOC = F16  |IOSTANDARD = LVCMOS33;
+Net "MemAdr<26>" LOC = F15  |IOSTANDARD = LVCMOS33;
+Net "MemDB<0>" LOC = R13 |IOSTANDARD = LVCMOS33;
+Net "MemDB<1>" LOC = T14 |IOSTANDARD = LVCMOS33;
+Net "MemDB<2>" LOC = V14 |IOSTANDARD = LVCMOS33;
+Net "MemDB<3>" LOC = U5  |IOSTANDARD = LVCMOS33;
+Net "MemDB<4>" LOC = V5  |IOSTANDARD = LVCMOS33;
+Net "MemDB<5>" LOC = R3  |IOSTANDARD = LVCMOS33;
+Net "MemDB<6>"  LOC = T3  |IOSTANDARD = LVCMOS33;
+Net "MemDB<7>"  LOC = R5  |IOSTANDARD = LVCMOS33;
+Net "MemDB<8>"  LOC = N5  |IOSTANDARD = LVCMOS33;
+Net "MemDB<9>"  LOC = P6  |IOSTANDARD = LVCMOS33;
+Net "MemDB<10>"  LOC = P12 |IOSTANDARD = LVCMOS33;
+Net "MemDB<11>"  LOC = U13 |IOSTANDARD = LVCMOS33;
+Net "MemDB<12>"  LOC = V13 |IOSTANDARD = LVCMOS33;
+Net "MemDB<13>"  LOC = U10 |IOSTANDARD = LVCMOS33;
+Net "MemDB<14>"  LOC = R8  |IOSTANDARD = LVCMOS33;
+Net "MemDB<15>"  LOC = T8  |IOSTANDARD = LVCMOS33;
+

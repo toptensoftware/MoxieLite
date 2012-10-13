@@ -1,0 +1,645 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"flas",
+				"flash_wait_B_n"
+			],
+			[
+				"flash",
+				"flash_dout_B"
+			],
+			[
+				"cpu_",
+				"cpu_wr_n"
+			],
+			[
+				"boot",
+				"boot_range"
+			],
+			[
+				"mem",
+				"mem_rd"
+			],
+			[
+				"reg",
+				"reg_cursor_pos"
+			],
+			[
+				"status",
+				"status_busy"
+			],
+			[
+				"dma",
+				"dma_addr_reg"
+			],
+			[
+				"dma_",
+				"dma_din"
+			],
+			[
+				"sd_op",
+				"sd_op_block_number"
+			],
+			[
+				"Micro",
+				"MicrobeeSwitches"
+			],
+			[
+				"_GS",
+				"_GSFINAL"
+			],
+			[
+				"_casset",
+				"_cassettePosition"
+			],
+			[
+				"Wri",
+				"writeHexByte"
+			],
+			[
+				"cass",
+				"_cassettePosition"
+			],
+			[
+				"Cass",
+				"CassetteCyclesOutPort"
+			],
+			[
+				"Cassett",
+				"CassetteCyclesBusyPort"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "MoxieLiteSoc.ucf",
+			"settings":
+			{
+				"buffer_size": 7072,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/VHDL/Xilinx Makefile.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"core",
+				"Build: Core Generator"
+			],
+			[
+				"",
+				"Build: Core Generator"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"run",
+				"Build: Run"
+			],
+			[
+				"signal",
+				"VHDL: Paste Ports As Signals"
+			],
+			[
+				"ent",
+				"VHDL: Paste Entity Instance"
+			],
+			[
+				"en",
+				"VHDL: Paste Entity Instance"
+			],
+			[
+				"test",
+				"Snippet: TestBench"
+			],
+			[
+				"entity",
+				"VHDL: Paste Entity Instance"
+			],
+			[
+				"vhdl",
+				"VHDL: Paste Entity Instance"
+			],
+			[
+				"Core",
+				"Build: Core Generator"
+			],
+			[
+				"clea",
+				"Build: Clean"
+			],
+			[
+				"bui",
+				"Build: Build"
+			],
+			[
+				"build",
+				"Build: Clean"
+			],
+			[
+				"hex",
+				"Hex Viewer: Toggle Hex View"
+			],
+			[
+				"toggle",
+				"Hex Viewer: Toggle Hex View"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: Lor",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"Snippet: ",
+				"Snippet: #!/usr/bin/env"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 290.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/bradr/dev/fpga/moxie/ToolChain/moxie-elf/lib/moxie-elf-common.ld",
+		"/C/Users/bradr/dev/fpga/cpu386lite/cpu386bench/firmware/makefile",
+		"/C/Users/bradr/dev/fpga/moxie/soc/mkbuild/MoxieLiteSoc_par.xrpt",
+		"/C/Users/bradr/dev/fpga/moxie/soc/mkbuild/MoxieLiteSoc_map.mrp",
+		"/C/Users/bradr/dev/fpga/moxie/soc/mkbuild/MoxieLiteSoc_map.map",
+		"/C/Users/bradr/dev/fpga/moxie/cpu/moxielite.vhd",
+		"/C/Users/bradr/dev/fpga/moxie/soc/ipcore_dir/ram2k8bit16bit/doc/blk_mem_gen_ds512.pdf",
+		"/C/b/dev/fpga/moxie/soc/ipcore_dir/coregen.cgp",
+		"/C/Users/bradr/dev/fpga/moxielite/moxielite_bench/makefile",
+		"/C/Users/bradr/dev/fpga/moxielite/moxielite_package.vhd",
+		"/C/Users/bradr/dev/fpga/moxielite/moxielite_bench/moxielite_bench.vhd",
+		"/C/Users/bradr/dev/fpga/moxielite/moxielite_bench/target_utilization_limit(cpu86).txt",
+		"/C/Users/bradr/dev/fpga/moxielite/.gitignore",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86test/cpu86/testbench/cpu86_top_tb_struct.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86test/cpu86/testbench/tester_behaviour.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86bench.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/cpu86_struct.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Cpu86Test.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/biu_struct.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/biufsm_fsm.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/datapath_struct.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/a_table.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/cpu86pack.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/formatter_struct.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/ps2interface.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/makefile",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86test/cpu86/top_rtl/Bootstrap_rtl.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86test/cpu86/top_rtl/cpu86_top_struct.vhd",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/VHDL/VhdlUtils.py",
+		"/C/Users/bradr/dev/fpga/Nexys3/FpgaBee/PeripheralController.vhd",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/VHDL/VhdlUtils.pyc",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/firmware/makefile",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/dataregfile_rtl.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/divider_rtl_ser.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/ipregister_rtl.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/proc_rtl.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/regshiftmux_regshift.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/segregfile_rtl.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86/alu_rtl.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/zet/cores/zet/rtl/rom_def.v",
+		"/C/Users/bradr/dev/fpga/Nexys3/zet/cores/zet/rtl/micro_rom.dat",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/.gitignore",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/urep_cpu86",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/urep_z80",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/ERROR:HDLCompiler",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/Makefile/Make.sublime-build",
+		"/Z/FPGA/cpu86bench/PeripheralController.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/PeripheralController.vhd",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Z/FPGA/cpu86bench/ipcore_dir/coregen.cgc",
+		"/Z/FPGA/cpu86bench/cpu86bench.vhd",
+		"/Z/FPGA/cpu86bench/Crtc6545.vhd",
+		"/Z/FPGA/cpu86bench/ipcore_dir/.gitignore",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/VHDL/VhdlUtils.sublime-commands",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/VHDL/vh.py",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/Default/Default.sublime-commands",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/SDCardControllerTest.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/SDCardController.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Crtc6545.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/makefile_xilinx",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/makefile_utils.bat",
+		"/C/Users/bradr/dev/fpga/Nexys3/SDCardControllerTest.vhd",
+		"/C/Users/bradr/AppData/Local/Temp/Rar$DR02.849/syntax_check.scr",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/cpu86bench.sublime-workspace",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/FlashMemoryController.vhd",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/ClockEnable.vhd",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/Default/comment.py",
+		"/C/Users/bradr/AppData/Roaming/Sublime Text 2/Packages/User/VhdlUtils.py",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/ipcore_dir/CharRom.vhd",
+		"//cool/brad/transfer/MakeForFPGA.sublime-build",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/crt0.s",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/SDCard.c",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/PeripheralController.h",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/PeripheralController.c",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/makefile",
+		"/C/Users/bradr/Books/GoodReader/Nexys3_Master.ucf",
+		"/C/Users/bradr/dev/fpga/BuildYourOwnZ80Computer/spi_test.ucf",
+		"/C/Users/bradr/dev/fpga/BuildYourOwnZ80Computer/SDRAM_SPIMASTER.vhd",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/PeripheralController.asm",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/PeripheralController.mem",
+		"/C/retro/galwork/makefile",
+		"/C/retro/galwork/galaxy.asm",
+		"/C/retro/galwork/galaxy.lst",
+		"/C/retro/galwork/galaxy(backup).asm",
+		"/C/retro/ubee512/doc/README",
+		"/C/retro/ubee512/ubee512rc",
+		"/C/retro/galwork/galaxy.sublime-project",
+		"/C/retro/galwork/galaxy_trs80.asm",
+		"/C/retro/galwork/galaxy.orig.lst",
+		"/C/retro/galwork/galaxy.orig.asm",
+		"/C/retro/ubee512/roms/PC85B_BASIC.asm",
+		"/C/retro/galwork/galaxy.tap",
+		"/C/retro/galwork/-ogalaxy.bin",
+		"/C/Users/bradr/Downloads/sdfatlib20120719/SdFat/Sd2Card.cpp",
+		"/C/b/Books/GoodReader/Nexys3_Master.ucf",
+		"/C/Users/bradr/Downloads/sdfatlib20120719/SdFat/SdInfo.h",
+		"/C/retro/ubee512/tapes/galaxy.asm",
+		"/C/b/dev/disz/.git/config",
+		"/C/retro/Manuals/microbee_32k_memory_map_1.5.pdf",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/PeripheralController.lst",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/PeripheralController.bin",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/build/PeripheralController.rst",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/.gitignore",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/PeripheralController.bin2",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/build/PeripheralController.lk",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/crt0.lst",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/crt0.noi",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/build/PeripheralController.bin2",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/build/PeripheralController.lst",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/build/PeripheralController.ihx",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/rom.rom",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/hsharp_examples.hs",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/rom.bin",
+		"/C/retro/ubee512/Source/src/tape.c",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/rom.asm",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/dump.bin",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/rom_hello_microbee.asm",
+		"/C/Program Files (x86)/z88dk/lib/config/ram4k.cfg",
+		"/C/Program Files (x86)/z88dk/lib/ram4k_crt0.asm",
+		"/C/Program Files (x86)/z88dk/lib/config/z88.cfg",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/pc.asm",
+		"/C/Users/bradr/dev/fpga/Nexys3/cpu86bench/Rom/charrom.coe",
+		"/C/Program Files (x86)/z88dk/lib/ram4k_crt0.opt",
+		"/C/Users/bradr/AppData/Local/Temp/s568_.asm",
+		"/C/Users/bradr/AppData/Local/Temp/s568_.o"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\Users\\bradr\\dev\\fpga\\Nexys3\\cpu86bench\\cpu86",
+			"cpu86",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"status_pixel",
+			"rom_range",
+			"base",
+			"_h",
+			"port_",
+			"debug_reg",
+			"cpu_wr_l",
+			"tape_in",
+			"speaker",
+			"port_wr",
+			"cpu_addr",
+			"debug_reg",
+			"leds_reg",
+			"butup",
+			"tape",
+			"debug_reg",
+			"r0",
+			"ram_range",
+			"bin2",
+			"regfile",
+			"reset",
+			"maxim",
+			"maximi",
+			"mhz",
+			"warning",
+			"trimming report",
+			"reset",
+			"sd_status",
+			"cpu_din",
+			"flash_dout",
+			"keyboardMessage",
+			"keyb_state_break",
+			"KeyboardPort",
+			"keyb_state_break",
+			"KeyboardMessageAvailable_delay1",
+			"KeyboardMessageAvailable",
+			"prev_addr_A",
+			"ram_we",
+			"vram_we_",
+			"pctrl_ram",
+			"dout_b",
+			"flash_dout_b",
+			"ram_dout",
+			"port_",
+			"ram_dout",
+			"boot",
+			"port_wr_prev",
+			"reg_cursor_pos",
+			"bench",
+			"jcxz",
+			"maximum",
+			"Cpu_addr",
+			"86",
+			":",
+			"86",
+			"cbus_s",
+			"outbus_s",
+			"bit_nr",
+			"carry",
+			"ALU_AND",
+			"_NOT",
+			"cbus_s",
+			"cout_s",
+			"overflow_v",
+			"sbc",
+			"overflow_s",
+			"overflo",
+			"parity",
+			"SHL",
+			"sbb",
+			"sign16a_s",
+			"alubus_s",
+			"sext",
+			"cbw",
+			"SBB",
+			"pixel_x",
+			"fullAdd",
+			"cbus_s",
+			"ALU_ADD",
+			" + ",
+			"alu_ADD",
+			"_ADD",
+			"waitn",
+			"rdcode_",
+			"rdn",
+			"waitn",
+			"ws_s",
+			"<= Swsr;",
+			"<= sws;",
+			"sws",
+			"<= sws",
+			"ws_s",
+			"sws",
+			"biu",
+			"bui",
+			"biufsm",
+			"ram_rang",
+			"flash",
+			"rom_range",
+			"rom_rang",
+			"internal",
+			"flash",
+			"por",
+			"po",
+			"reset",
+			"mem_rd",
+			"leds_reg",
+			"rom_ra",
+			"flash",
+			"debug_reg",
+			"reset",
+			"clk",
+			"reset_n",
+			"debug_reg",
+			"debug_data",
+			"seg",
+			"debug_dat",
+			"leds_reg",
+			"Smaxwsw",
+			"----maxwsr",
+			"--maxwsr",
+			"maxwsr",
+			"rddata_s",
+			"maxwsw",
+			"ws_s",
+			"Swsr",
+			"ws_S",
+			"wsw"
+		],
+		"highlight": true,
+		"in_selection": true,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"r2",
+			"=>",
+			"cpu",
+			"_prev",
+			"",
+			"cpu",
+			"vram_range",
+			"cpu",
+			"",
+			"clock_en",
+			" then",
+			"if ",
+			"screenTransition2",
+			"screenTransition1",
+			"screenTransition0",
+			"screenTransition",
+			"SOUND",
+			"seg7_addr_display",
+			"-mask:fromalpha"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "MoxieLiteSoc.ucf",
+					"settings":
+					{
+						"buffer_size": 7072,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								687,
+								754
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 224.0
+	},
+	"output.hex_viewer_inspector":
+	{
+		"height": 124.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"ucf",
+				"MoxieLiteSoc.ucf"
+			],
+			[
+				"make",
+				"makefile"
+			],
+			[
+				"biu",
+				"cpu86/biu_struct.vhd"
+			],
+			[
+				"per",
+				"PeripheralController.vhd"
+			],
+			[
+				"cass",
+				"CassetteSignalGenerator.vhd"
+			],
+			[
+				"perip",
+				"PeripheralController.vhd"
+			],
+			[
+				"crt",
+				"Crtc6545.vhd"
+			],
+			[
+				"makefile",
+				"makefile_utils.bat"
+			],
+			[
+				"mak",
+				"makefile_xilinx"
+			],
+			[
+				"sdcard",
+				"SDCardController.vhd"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/Users/bradr/dev/fpga/moxie/cpu/moxielite.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 306.0,
+	"status_bar_visible": true
+}
