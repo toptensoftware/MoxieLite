@@ -1,13 +1,13 @@
 ## MOXIE TOOL CHAIN
 MOXIEPATH=/opt/moxielogic
-AS=$(MOXIEPATH)/bin/moxiebox-as
-LD=$(MOXIEPATH)/bin/moxiebox-ld
-CC=$(MOXIEPATH)/bin/moxiebox-gcc
-OBJDUMP=$(MOXIEPATH)/bin/moxiebox-objdump
-OBJCOPY=$(MOXIEPATH)/bin/moxiebox-objcopy
+AS=$(MOXIEPATH)/bin/moxie-elf-as
+LD=$(MOXIEPATH)/bin/moxie-elf-ld
+CC=$(MOXIEPATH)/bin/moxie-elf-gcc
+OBJDUMP=$(MOXIEPATH)/bin/moxie-elf-objdump
+OBJCOPY=$(MOXIEPATH)/bin/moxie-elf-objcopy
 
 ## TOOL OPTIONS
-ENDIANESS=-EL
+ENDIANESS=-EB
 ASOPTS=$(ENDIANESS)
 LDOPTS=$(ENDIANESS)
 CCOPTS=-Wa,$(ENDIANESS) -std=c99 -save-temps=obj
@@ -23,7 +23,7 @@ OBJ_FILES = \
 
 ## Link Step
 $(OUT)/ctest.bin: $(OBJ_FILES)
-	$(LD) $(LDOPTS) $(OBJ_FILES) $(MOXIEPATH)/moxiebox/lib/libc.a -Map $(OUT)/ctest.map -o $(OUT)/ctest.elf -Tmoxie-elf-embedded.ld
+	$(LD) $(LDOPTS) $(OBJ_FILES) $(MOXIEPATH)/moxie-elf/lib/libc.a -Map $(OUT)/ctest.map -o $(OUT)/ctest.elf -Tmoxie-elf-embedded.ld
 
 $(OUT)/%.o: %.c $(OUT)
 	$(CC) $(CCOPTS) -c $< -o $@
