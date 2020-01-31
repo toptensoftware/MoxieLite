@@ -1,4 +1,4 @@
-OUTPUT_FORMAT("elf32-bigmoxie", "elf32-bigmoxie", "elf32-littlemoxie")
+OUTPUT_FORMAT("elf32-big")
 OUTPUT_ARCH(moxie)
 ENTRY(_start)
 

@@ -1,15 +1,16 @@
 ## MOXIE TOOL CHAIN
-MOXIEPATH=../ToolChain/bin
-AS=$(MOXIEPATH)/moxie-elf-as.exe
-LD=$(MOXIEPATH)/moxie-elf-ld.exe
-CC=$(MOXIEPATH)/moxie-elf-gcc.exe
-OBJDUMP=$(MOXIEPATH)/moxie-elf-objdump.exe
-OBJCOPY=$(MOXIEPATH)/moxie-elf-objcopy.exe
+MOXIEPATH=/opt/moxielogic
+AS=$(MOXIEPATH)/bin/moxiebox-as
+LD=$(MOXIEPATH)/bin/moxiebox-ld
+CC=$(MOXIEPATH)/bin/moxiebox-gcc
+OBJDUMP=$(MOXIEPATH)/bin/moxiebox-objdump
+OBJCOPY=$(MOXIEPATH)/bin/moxiebox-objcopy
 
 ## TOOL OPTIONS
-ASOPTS=-EL
-LDOPTS=-EL
-CCOPTS=-Wa,-EL -std=c99 -save-temps=obj
+ENDIANESS=-EL
+ASOPTS=$(ENDIANESS)
+LDOPTS=$(ENDIANESS)
+CCOPTS=-Wa,$(ENDIANESS) -std=c99 -save-temps=obj
 
 ## Output directory
 OUT = ./build
@@ -22,27 +23,16 @@ OBJ_FILES = \
 
 ## Link Step
 $(OUT)/ctest.bin: $(OBJ_FILES)
-	$(LD) $(LDOPTS) $(OBJ_FILES) ../ToolChain/moxie-elf/lib/el/libc.a -Map $(OUT)/ctest.map -o $(OUT)/ctest.elf -Tmoxie-elf-embedded.ld
-	$(OBJCOPY) --remove-section .data -O binary $(OUT)/ctest.elf $@
-	$(OBJDUMP) -s $(OUT)/ctest.elf > $(OUT)/ctest.elf.data
-	$(OBJDUMP) -d $(OUT)/ctest.elf > $(OUT)/ctest.elf.dis
+	$(LD) $(LDOPTS) $(OBJ_FILES) $(MOXIEPATH)/moxiebox/lib/libc.a -Map $(OUT)/ctest.map -o $(OUT)/ctest.elf -Tmoxie-elf-embedded.ld
 
+$(OUT)/%.o: %.c $(OUT)
+	$(CC) $(CCOPTS) -c $< -o $@
 
-$(OUT)/startup.o: startup.s
-
-$(OUT)/main.o: main.c threading.h
-
-$(OUT)/main.o: threading.c threading.h
-
-
-$(OUT)/%.o: %.s
+$(OUT)/%.o: %.s $(OUT)
 	$(AS) $(ASOPTS) -o $@ $< 
-	$(OBJDUMP) -d $@ > $@.dis
 
-$(OUT)/%.o: %.c
-	$(CC) $(CCOPTS) -c -o $@ $< 
-	$(OBJDUMP) -d $@ > $@.dis
-	$(OBJDUMP) -s $@ > $@.data
+$(OUT):
+	mkdir -p $(OUT)
 
 clean:
-	rm $(OUT)/*
+	rm -rf $(OUT)

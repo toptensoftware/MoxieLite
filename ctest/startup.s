@@ -9,14 +9,14 @@ _start:
 	ldi.l	$r0,__data_start
 	ldi.l	$r1,__data_load
 	ldi.l	$r2,__data_end
-	sub.l	$r2,$r0
+	sub		$r2,$r0
 	jsra	memcpy
 
 	# Zero BSS section
 	ldi.l	$r0,__bss_start
 	xor		$r1,$r1
 	ldi.l	$r2,__bss_end
-	sub.l	$r2,$r0
+	sub		$r2,$r0
 	jsra	memset
 
 	# Jump to main

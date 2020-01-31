@@ -20,7 +20,7 @@ Notes:
 
 #include <stdlib.h>
 #include <string.h>
-#include "Threading.h"
+#include "threading.h"
 
 #define true 1
 #define false 0
@@ -61,7 +61,7 @@ void threads_run()
 		\n\
 		# Save FP\n\
 		ldi.l	$r0,-12\n\
-		add.l	$r0,$fp\n\
+		add		$r0,$fp\n\
 		sta.l	(g_exit_fp),$r0\n\
 		\n\
 		# Run the first thread\n\
